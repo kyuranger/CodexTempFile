@@ -1,0 +1,483 @@
+--- a/prototypes/phase-2d-a5-3/tusky_phoenix/index.html
++++ b/prototypes/phase-2d-a5-3/tusky_phoenix/index.html
+@@ -516,7 +516,7 @@
+         </ul>
+       </div>
+     </section>
+-    <section class="lifecycle" id="product-lifecycle" aria-labelledby="lifecycle-heading" data-phase="phase-2d-a7-b-p01" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-claim-status="SOURCE_SUPPORTED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE">
++    <section class="lifecycle" id="product-lifecycle" aria-labelledby="lifecycle-heading" data-phase="phase-2d-a7-b-p02" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-claim-status="SOURCE_SUPPORTED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE">
+       <div class="lifecycle__stage">
+         <header class="lifecycle__intro">
+           <p class="lifecycle__eyebrow">产品生命周期</p>
+@@ -587,7 +587,7 @@
+         </div>
+       </div>
+     </section>
+-    <section class="carriers" id="alternative-carriers" aria-labelledby="carriers-heading" data-phase="phase-2d-a7-b-p01" data-story="One Object, Alternative Carriers" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE" data-current-capability-status="NEEDS_VERIFICATION">
++    <section class="carriers" id="alternative-carriers" aria-labelledby="carriers-heading" data-phase="phase-2d-a7-b-p02" data-story="One Object, Alternative Carriers" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE" data-current-capability-status="NEEDS_VERIFICATION">
+       <header class="carriers__intro">
+         <p class="carriers__eyebrow">标识与载体</p>
+         <h2 id="carriers-heading"><span>标识，</span><span>落在合适的载体上</span></h2>
+--- a/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css
++++ b/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css
+@@ -1,4 +1,4 @@
+-/* A7-B Patch 01. One shared media/relationship field; Hero rules are untouched. */
++/* A7-B Patch 02. Open relationship field and asymmetric editorial chapter. */
+ @font-face {
+   font-family: "Tusky Lifecycle";
+   font-style: normal;
+@@ -52,7 +52,7 @@
+   display: block;
+   width: 100%;
+   height: auto;
+-  border-radius: 18px;
++  border-radius: 0;
+ }
+ .lifecycle__field { position: absolute; inset: 0; }
+ .lifecycle__identity { position: absolute; left: 52%; top: 66%; width: 16%; }
+@@ -95,31 +95,37 @@
+ .lifecycle__resolution { max-width: 1080px; margin: 28px 3.5% 0; }
+ .lifecycle__closing { max-width: 39em; margin: 0; color: #373b35; font-size: 21px; font-weight: 350; line-height: 1.7; text-wrap: pretty; }
+ .lifecycle__scope, .carriers__scope { margin: 12px 0 0; color: #60645c; font-size: 13px; line-height: 1.8; }
+-/* Only the unified photo field pins; the introduction and conclusion read in flow. */
++/* Measured scene/viewport geometry sets the centered sticky offset. */
+ @media (min-width: 961px) and (min-height: 820px) and (prefers-reduced-motion: no-preference) {
+-  .lifecycle[data-motion="desktop"] .lifecycle__track::after { content: ""; display: block; height: clamp(260px, 38vh, 400px); }
+-  .lifecycle[data-motion="desktop"] .lifecycle__scene { position: sticky; top: 24px; }
++  .lifecycle[data-motion="desktop"] .lifecycle__track::after { content: ""; display: block; height: clamp(560px, 74vh, 740px); }
++  .lifecycle[data-motion="desktop"] .lifecycle__scene { position: sticky; top: var(--story-top, 0px); }
+ }
+-.carriers { padding: 48px 0 88px; }
+-.carriers__intro { max-width: 1040px; margin: 0 auto 32px; padding-inline: 24px; text-align: center; }
+-.carriers__lead { margin-inline: auto; }
+-.carriers__media { margin: 0; }
++.carriers {
++  display: grid;
++  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
++  gap: 32px clamp(32px, 4vw, 64px);
++  padding: 64px 0 88px;
++  align-items: start;
++}
++.carriers__intro { grid-column: 2; grid-row: 1; max-width: 36em; margin: 0; text-align: left; }
++.carriers h2 { font-size: clamp(34px, 3.2vw, 50px); }
++.carriers h2 span { display: block; }
++.carriers__media { grid-column: 1; grid-row: 1 / span 2; align-self: center; margin: 0; }
+ .carriers__media img {
+   display: block;
+   width: 100%;
+   height: auto;
+-  aspect-ratio: 16 / 10;
+-  object-fit: cover;
+-  object-position: 50% 55%;
+-  border-radius: 18px;
++  aspect-ratio: 4 / 3;
++  object-fit: contain;
++  border-radius: 0;
+ }
+-.carriers__choices { margin: 36px 3.5% 0; }
+-.carriers__routes-label { margin: 0 0 24px; color: #62655e; font-size: 13px; line-height: 1.5; }
+-.carriers__routes { display: flex; flex-wrap: wrap; gap: 28px clamp(24px, 3.5vw, 64px); margin: 0; }
+-.carriers__routes > div { flex: 0 0 auto; min-width: 0; }
+-.carriers__routes dt { color: #2d312c; font-size: 24px; font-weight: 350; line-height: 1.4; }
+-.carriers__routes dd { margin: 7px 0 0; color: #555951; font-size: 14px; line-height: 1.7; }
+-.carriers__scope { margin-top: 28px; }
++.carriers__choices { grid-column: 2; grid-row: 2; margin: 0; }
++.carriers__routes-label { margin: 0 0 20px; color: #62655e; font-size: 13px; line-height: 1.5; }
++.carriers__routes { display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px 24px; margin: 0; }
++.carriers__routes > div { min-width: 0; }
++.carriers__routes dt { color: #2d312c; font-size: 22px; font-weight: 350; line-height: 1.4; }
++.carriers__routes dd { margin: 7px 0 0; color: #555951; font-size: 13px; line-height: 1.7; }
++.carriers__scope { margin-top: 24px; }
+ /* Tablet keeps the wide landscape field instead of a small centered portrait. */
+ @media (max-width: 960px) {
+   .lifecycle, .carriers { width: calc(100% - 40px); }
+@@ -127,9 +133,13 @@
+   .lifecycle__intro { padding-inline: 16px; }
+   .lifecycle__resolution { margin-inline: 16px; }
+   .lifecycle__context p { margin-top: 7px; line-height: 1.55; }
+-  .carriers { padding: 40px 0 64px; }
+-  .carriers__choices { margin-inline: 16px; }
+-  .carriers__routes { column-gap: 40px; }
++  .carriers { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 48px 0 64px; }
++  .carriers__intro { grid-column: 1; grid-row: 1; width: 90%; max-width: none; justify-self: end; margin-bottom: 32px; }
++  .carriers h2 { font-size: 40px; }
++  .carriers h2 span { display: inline-block; }
++  .carriers__media { grid-column: 1; grid-row: 2; width: 88%; justify-self: start; }
++  .carriers__choices { grid-column: 1; grid-row: 3; width: 88%; justify-self: end; margin-top: 32px; }
++  .carriers__routes { grid-template-columns: 1.05fr 1.35fr 1fr; column-gap: 28px; }
+ }
+ /* One portrait field: labels and the cumulative curved trace share Image B. */
+ @media (max-width: 700px) {
+@@ -141,7 +151,7 @@
+   .lifecycle h2 span, .carriers h2 span { display: block; }
+   .lifecycle__lead, .carriers__lead { margin-top: 18px; font-size: 14px; line-height: 1.85; }
+   .lifecycle__track { margin-top: 24px; }
+-  .lifecycle__photo img { aspect-ratio: 1122 / 1402; border-radius: 14px; }
++  .lifecycle__photo img { aspect-ratio: 1122 / 1402; }
+   .lifecycle__connections--wide { display: none; }
+   .lifecycle__connections--compact { display: block; }
+   .lifecycle__identity { left: 5%; top: 4%; width: 28%; }
+@@ -157,11 +167,11 @@
+   .lifecycle__closing { font-size: 18px; line-height: 1.7; }
+   .lifecycle__scope, .carriers__scope { font-size: 12px; line-height: 1.85; }
+   .carriers { padding: 32px 0 56px; }
+-  .carriers__intro { padding-inline: 8px; margin-bottom: 24px; text-align: left; }
+-  .carriers__media img { aspect-ratio: 4 / 3; object-fit: contain; border-radius: 14px; }
+-  .carriers__choices { margin: 24px 8px 0; }
++  .carriers__intro { width: auto; justify-self: stretch; padding-inline: 8px; margin-bottom: 24px; }
++  .carriers__media { width: calc(100% + 32px); margin-inline: -16px; }
++  .carriers__choices { width: auto; justify-self: stretch; margin: 24px 8px 0; }
+   .carriers__routes-label { margin-bottom: 20px; font-size: 12px; }
+-  .carriers__routes { display: grid; grid-template-columns: 1.12fr 1fr; gap: 22px 16px; }
++  .carriers__routes { grid-template-columns: 1.12fr 1fr; gap: 22px 16px; }
+   .carriers__routes dt { font-size: 20px; }
+   .carriers__routes dd { margin-top: 5px; font-size: 12px; }
+   .carriers__scope { margin-top: 24px; }
+@@ -169,6 +179,7 @@
+ @media (max-width: 359px) {
+   .lifecycle, .carriers { width: calc(100% - 24px); }
+   .lifecycle__context p { font-size: 12px; }
++  .carriers__media { width: calc(100% + 24px); margin-inline: -12px; }
+ }
+ @media (prefers-reduced-motion: reduce), print {
+   .lifecycle { --relation-0: 1 !important; --relation-1: 1 !important; --relation-2: 1 !important; }
+--- a/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.js
++++ b/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.js
+@@ -1,9 +1,10 @@
+-// A7-B P01. Progressive decoration over one media field; HTML is complete first.
++// A7-B P02. Preserve the accumulating trace inside a centered open field.
+ const chapter = document.querySelector('.lifecycle');
+ if (chapter) {
+   const track = chapter.querySelector('.lifecycle__track');
+   const scene = chapter.querySelector('.lifecycle__scene');
+   const lastHeading = chapter.querySelector('.lifecycle__context--service h3');
++  const masthead = document.querySelector('.masthead');
+   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+   const desktop = matchMedia('(min-width: 961px) and (min-height: 820px)');
+   const narrow = matchMedia('(max-width: 700px)');
+@@ -23,11 +24,20 @@
+     const origin = chapter.querySelector(narrow.matches ? '.lifecycle__origin--compact' : '.lifecycle__origin--wide');
+     const anchor = origin.getBoundingClientRect();
+     const originOffset = anchor.top + anchor.height / 2 - bounds.top;
+-    const start = trackBounds.top + originOffset - innerHeight * .80;
++    // A normal-flow masthead has scrolled away before this scene pins.
++    // Only a visible fixed/sticky masthead occupies the usable viewport.
++    const headerPosition = masthead ? getComputedStyle(masthead).position : 'static';
++    const topInset = /^(fixed|sticky)$/.test(headerPosition)
++      ? Math.max(0, Math.min(innerHeight, masthead.getBoundingClientRect().bottom)) : 0;
++    const stickyTop = topInset + Math.max(0, (innerHeight - topInset - bounds.height) / 2);
++    const start = desktop.matches
++      ? trackBounds.top - stickyTop
++      : trackBounds.top + originOffset - innerHeight * .80;
+     const end = desktop.matches
+-      ? trackBounds.bottom - bounds.height - parseFloat(getComputedStyle(scene).top) - 24
++      ? trackBounds.bottom - bounds.height - stickyTop - 24
+       : trackBounds.top + lastHeading.getBoundingClientRect().top - bounds.top - innerHeight * .42;
+     const progress = clamp(-start / Math.max(1, end - start));
++    if (desktop.matches) chapter.style.setProperty('--story-top', `${stickyTop}px`);
+     ranges.forEach(([from, to], index) => {
+       chapter.style.setProperty(`--relation-${index}`, clamp((progress - from) / (to - from)).toFixed(4));
+     });
+--- /dev/null
++++ b/docs/rebuild-audit/phase-2d-a7/Phase-2D-A7-B-Patch-02.md
+@@ -0,0 +1,64 @@
++# Phase 2D-A7-B Patch 02
++
++2026-09-08 · **PHASE_2D_A7_B_P02_REVIEW_READY** · 完成后停止，等待 Product Owner / ChatGPT review。
++
++## 当前结论与有效范围
++
++P01 被 Product Owner 判定 **NOT ACCEPTED**。本补丁修正前三章连续重复大圆角媒体框和桌面 C2 停留位置偏高的问题。P01 的具体文案、六路线、批准媒体和累积关系语义保持；P02 替代其容器、C2 sticky 定位/对应桌面滚动时机和 C3 排版结论。
++
++| 章节 | P02空间表达 | 保留项 |
++|---|---|---|
++| Hero | 唯一的大圆角生活场景媒体框 | markup、字体、图片、cues、断点、静态行为全部冻结 |
++| C2 | 宽画布内的开放关系画面；图片radius=0，无卡壳/边框/阴影 | A/B、现有HTML标签/正文、SVG路径几何、同源累积与回撤 |
++| C3 | 桌面约六成静物与余下路线文字的非对半构图；开放边缘 | C、六路线与全部短描述、条件句；静态 |
++
++C3 ≥961px：图片在左，标题/支持句与路线在右，媒体约占整章宽度59.6%，网格剩余空间包含文字与间距。使用完整4:3静物，移除旧16:10 CSS裁切。820平板采用左侧88%宽静物与向右错开的文字，画布仍780px；≤700px图片通栏，文字保持正常边距、两列三行开放排版。没有六卡、pills、图标网格、能力矩阵、边框、背景壳、玻璃或阴影。
++
++C2画面仍与Hero的大画布相关联，但用方直开放边缘结束重复的卡片语言。手机保持P01单一B画面，身份、三组标签和曲线仍覆盖同一照片；390px整章仍848.8px，共享画面仍358×447.3px，没有后接独立长SVG。
++
++## C2居中与节奏决策
++
++原P01固定 `top:24px` 在1440×900时把607.2px高的画面中心放到约327.6px，较视口中心高122.4px。本轮测量实际场景高度和页头定位。当前 masthead 是随文档滚走的 static 元素；C2停留期间遮挡高为0，因此不把其64px布局高度当作固定遮挡。
++
++居中偏移 = 实际顶部遮挡 +（视口高 − 实际顶部遮挡 − 场景高）/2。该值来自真实DOM几何并随尺寸更新，不固定为24px。桌面动画在画面到达居中停留位置后开始，结束于释放前24px；出场后仍可原生继续滚动。没有修改SVG路径或关系的含义。
++
++为保留已喜欢的展开节奏，桌面自然滚动行程设为 `clamp(560px,74vh,740px)`；900px高时，停留行程666px、实际关系展开642px，接近P01在1440×900时的643.6px。桌面整章高度相应增加，但手机/平板无新增停留或行程。未把动画压缩到初步居中版本的318px。
++
++| Viewport | 页头定位 / 遮挡高 | 画面高 | sticky top | entry中心 | midpoint中心 | final中心 | 最大中心误差 | 动画行程 |
++|---|---|---:|---:|---:|---:|---:|---:|---:|
++| 1440×900 | static / 0 | 607.172 | 146.414 | 449.992 | 449.992 | 449.992 | 0.008px | 642.0px |
++| 1024×900 | static / 0 | 421.453 | 239.273 | 449.992 | 449.992 | 449.992 | 0.008px | 642.0px |
++
++
++MEASURED：entry / midpoint / final 的画面中心误差均小于0.1px，画面完整处于viewport内。INSPECTED：真实截图确认上下平衡，不仅验证公式；最终路径到达三组标签，结束后能够正常释放。1440px上下留白均约146.4px，1024px均约239.3px。
++
++## 保留内容与证据边界
++
++VERIFIED：HTML 与P01逐字节比较，仅两处内部 `data-phase` 从p01改为p02；所有可见正文、标题、alt、条件句、六路线、claim属性和SVG几何完全一致。未重新做文案或提升旧源证据强度。
++
++C2保留日期/批次、工序/操作员、出库/物流、渠道/销售、保修/售后信息。C3保留：喷码—油墨形成标识；激光标识—材料表面的标识工艺；标签—贴附式载体；金属标牌—独立标识载体；RFID—射频识别技术；TTO—热转印赋码。旧源支持这些信息类别/术语，当前能力仍 `NEEDS_VERIFICATION`；金属标牌保持载体概念，不等同于旧源机械金属标记工艺。没有增加永久、耐久、全兼容、自动迁移或多载体同时绑定等承诺。
++
++P01内部来源表仍作为内容依据留在 `docs/rebuild-audit/phase-2d-a7/Phase-2D-A7-B-Patch-01.md`，其中P01的REVIEW_READY与视觉结论属于被拒绝的历史交付，不是当前接受状态。其上游legacy/claim审计本轮未重写，旧项目未修改。A/B/C仍为 `AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE`；C中圆形挂片不认作RFID。批准PNG、现有WebP、QR和Hero资源hash全部匹配输入基线。
++
++## 验证、交付与停止
++
++TESTED：六个指定尺寸无横向溢出；C2/C3媒体radius均0，前三章所有大圆角媒体元素均属于Hero；C3桌面占比55–65%、移动媒体通栏、路线无卡片装饰；12组reduced/no-JS、7组resize、动态reduced切换、三态/回撤/释放、原生PageDown和闲置RAF检查通过。六尺寸Hero稳定截图差异均0。
++
++INSPECTED：六尺寸完整静态长页、1440/1024桌面停留三态、390移动三态、桌面/手机交接及C3构图；共22张本轮截图。全页明确是reduced静态回退，C3章节截图包含完整viewport宽度以保留手机通栏边缘；正常动效另列，不能将静态长页当作全动态阶段同时出现的单帧。
++
++| Viewport | Hero宽 | C2画面宽×高 | C2整章高（正常） | C3画布宽 | C3静物宽 | C3整章高 |
++|---|---:|---:|---:|---:|---:|---:|
++| 1440×900 | 1360 | 1360×607.2 | 1706.8 | 1360 | 810.9 | 760.2 |
++| 1024×900 | 968 | 944×421.5 | 1505.9 | 944 | 562.3 | 727.4 |
++| 820×1180 | 780 | 780×348.2 | 738.7 | 780 | 686.4 | 1086.8 |
++| 430×932 | 398 | 398×497.3 | 898.8 | 398 | 430.0 | 937.0 |
++| 390×844 | 358 | 358×447.3 | 848.8 | 358 | 390.0 | 907.0 |
++| 320×740 | 296 | 296×369.9 | 797.2 | 296 | 320.0 | 902.5 |
++
++完整预览：[localhost](http://127.0.0.1:8767/)。当前入口：`REVIEW-MANIFEST.md`、`START-HERE.html`。本次delta：`Tusky-A7-B-Patch-02-Delta-Review.zip`；只含变化源码、相对于P01输入的diff、本补丁证据与当前QA/决策。未变PNG/WebP/字体只用路径/hash引用，不重复带入。
++
++REVIEW_READY 不等于 Product Owner 已接受。尚未验证真机、Safari/Firefox、真人读屏、系统文字放大和生产服务；沿用原型字体子集，跨平台字体覆盖未验证。AI 图片与 QR 不构成生产结果、真实客户案例、可扫码性、材料/设备兼容性或 RFID 接入证据。
++
++Git：main；HEAD 与 fresh origin/main 均为 `2e62e4eb9bf8ed72a91c22ab7a8e2498bc754c5f`；Ahead 0 / Behind 0。保留已授权的既有 dirty 工作区；未 commit，尚未推送。
++
++未开始Chapter4、未改品牌、未生成图片或增加依赖。当前范围已完成，下一步仅为Owner/ChatGPT评审；不自动进入后续阶段。
+--- a/docs/rebuild-audit/phase-2d-a7/REVIEW-MANIFEST.md
++++ b/docs/rebuild-audit/phase-2d-a7/REVIEW-MANIFEST.md
+@@ -1,39 +1,41 @@
+-# P01 REVIEW-MANIFEST
++# P02 REVIEW-MANIFEST
+ 
+-2026-09-08 · **PHASE_2D_A7_B_P01_REVIEW_READY** · 尚未 Owner accepted。
++2026-09-08 · **PHASE_2D_A7_B_P02_REVIEW_READY** · P01为NOT ACCEPTED；P02等待评审。
+ 
+-完整预览：[Hero → Chapter 2 → Chapter 3](http://127.0.0.1:8767/)。
++完整交互：[Hero → C2 → C3](http://127.0.0.1:8767/)。
+ Active prototype：`D:/Project/SealIntelligence.Web/prototypes/phase-2d-a5-3/tusky_phoenix/`。
+-Delta ZIP：`docs/rebuild-audit/phase-2d-a7/Tusky-A7-B-Patch-01-Delta-Review.zip`。
+-Review ZIP bytes: 0002199738
++Delta ZIP：`docs/rebuild-audit/phase-2d-a7/Tusky-A7-B-Patch-02-Delta-Review.zip`。
++Review ZIP bytes: 0002316767
+ 
+-## 评审入口与顺序
++## 评审顺序
+ 
+-打开 `START-HERE.html`，先看六尺寸全页尺度与手机整合，再看1440/390正常motion三态及交接，最后看三端C3六路线。18张本补丁截图：6全页reduced、6正常C2三态、3整章C3、2交接、1 no-JS全页。文件名与 `validation.json` 明确标注 fullPage / element / viewport，静态完整页面不冒充动态单帧。
++从 `START-HERE.html` 打开22张本轮证据：先六尺寸完整静态长页，看Hero圆框 → C2开放场 → C3非对半/错位静物的差异；再看1440/1024桌面C2三态与390手机三态；最后交接及四尺寸C3。点击图片看原始尺寸。
+ 
+-四项问题的补丁结果：390 C2由1642.4px缩至848.8px（减少48.3%）；同一B画面叠加身份/曲线/全部标签；C2增加有旧源依据的具体信息；C3命名六路线并保持开放式排版；删除反复“概念示意”；1440媒体1360宽，820媒体780宽，与Hero相连。
++6张全页是reduced静态回退，不冒充动态全阶段单帧；9张C2三态及2张交接是正常viewport截图；4张C3为整章页坐标裁框，宽度覆盖viewport，保留手机通栏图边缘；另有390 no-JS全页。方法与滚动位置均记于validation.json。
+ 
+-## 包边界与基线
++## 变化与冻结
+ 
+-只含本P01变化的源文件、当前Decision/QA/manifest/gallery、18张新截图、机器验证、完整性记录与 `media-integration/patch-01/changes.patch`。Diff直接对比P01开始时已授权的A7-B dirty输入，不是Git HEAD，也不是A6。历史A7-B被Owner拒绝，不能作为当前接受结论。
++C2/C3媒体radius改为0。C2桌面按真实场景高度居中，1440×900的top由24变为146.4px，1024×900为239.3px；两者三态中心误差<0.1px。C2在居中后开始，900px高时展开642px；手机几何/高度/曲线不变。C3桌面媒体约59.6%画布、文字在侧，820错位、手机通栏；六路线和描述全保留。
+ 
+-ZIP中 `source/index.html` 和 `source/assets/*.css/js` 是精确源码审查副本。未打包未变图片/字体，因此该副本不是独立可运行的网站；完整交互使用本机localhost。解压后的截图gallery不需要这些历史资产即可浏览。包没有全历史站点、原PNG母图、重复WebP、Hero二进制、字体、browser profile或凭据。
+-
+-变化源文件：
++Hero、所有可见文案、SVG路径、A/B/C PNG/WebP、QR和字体不变。HTML只有两处内部phase变化；不需要重新接受媒体或内容事实。没有Chapter4、品牌改动、卡片、玻璃、阴影、依赖或C3新动效。
+ 
+ | Repository-relative path | bytes | SHA-256 |
+ |---|---:|---|
+-| `prototypes/phase-2d-a5-3/tusky_phoenix/index.html` | 19179 | `2d15b6066ad2ef7bc5e54c74ac12ced4a5db9707b2e813c9e85ec14434abe583` |
+-| `prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css` | 7888 | `aca8c2c7ec85d3cd8c1b32f51eafe1146a34b3360a5818c7e8d65e9c0063b897` |
+-| `prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.js` | 2961 | `743b71054c27ef5f874a4f1ddf96d14d01467491609d412d9118b4183ea2eb02` |
++| `prototypes/phase-2d-a5-3/tusky_phoenix/index.html` | 19179 | `551e587713cf72300abb6216365a280ab3701c9fe6d7e7ccf5764980e8275ad1` |
++| `prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css` | 8594 | `3d011ddb1f3bfee1507e86e39991dca5d8c306849707760340c5ee980eb45af1` |
++| `prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.js` | 3599 | `d3957e81fccf3c14b5e8152b467838f0f0c40ba0bf1c65fa175dd51de0a24172` |
+ 
+-当前文档：`Phase-2D-A7-B-Patch-01.md`（新增，含内部来源表/决策/交接）；更新 `REVIEW-MANIFEST.md`、`Tusky-A7-Implementation-QA.md`、`Tusky-A7-Motion-QA.md`、`Tusky-A7-Media-QA.md`；`Phase-2D-A7-B-Decision.md` 仅添加被拒/被替代说明，`START-HERE.html` 更新为当前截图入口。未改其他旧A7文档。
++## Delta边界与文档效力
+ 
+-证据位于 `docs/rebuild-audit/phase-2d-a7/media-integration/patch-01/`：`validation.json`、`integrity.json`、`changes.patch`、`screenshots/`。ZIP保持该证据目录相对于本manifest的位置。
++包仅含3个变化源文件、当前P02 Decision、manifest、Implementation/Motion/Media QA、更新的START-HERE、22张必要新截图及 `media-integration/patch-02/validation.json`、`integrity.json`、`changes.patch`。Diff基线是本轮开始时已授权的P01 dirty输入，非Git HEAD；原历史文档和旧图库未带入。
+ 
+-## 未变媒体引用
++ZIP的 `source/index.html` 与 `source/assets/*.css/js` 是精确源码审查副本，不重复打包冻结图片/字体，因此不是独立可运行整站。离线gallery通过包中截图独立浏览；完整交互使用本机localhost。AI原图/WebP只引用下表路径/hash，不带母图、profile或任何凭据。
+ 
+-所有下表文件均在 `prototypes/phase-2d-a5-3/tusky_phoenix/assets/`，尺寸/QR/像素内容未改；只调整网页容器与CSS取景。A用于>700px，B用于≤700px，C用于C3。
++当前Decision：`Phase-2D-A7-B-Patch-02.md`。P01原交付为NOT ACCEPTED；其大圆角、旧sticky top、C3全宽图下rail的视觉结论由P02替代。P01文案来源/claim边界与已获批准的媒体、累积关系语义仍保留；历史文档留在仓库，不把旧REVIEW_READY当当前接受。
++
++## 媒体引用
++
++以下相对 `prototypes/phase-2d-a5-3/tusky_phoenix/assets/`；所有hash与输入基线一致：
+ 
+ | ID | assets文件 | bytes | SHA-256 |
+ |---|---|---:|---|
+@@ -44,10 +46,10 @@
+ | C | `tusky_phoenix_alternative_carriers.png` | 1739159 | `1632315557a1345bf55d6208bad116d9d39409ead48f726e2c2cb87b3e356cf4` |
+ | C | `tusky_phoenix_alternative_carriers.webp` | 93466 | `2d54d2d27b8704eb9addd6a7d502188095dae9f92498a16ea9f179f8fa9c1e1a` |
+ 
+-Hero源前缀字节一致，六尺寸稳定截图差异0；批准媒体/字体hash一致。当前全部6尺寸、12fallback、7resize通过；详见QA，不把局部静态原型检查扩写成完整站点或产品能力测试。
++## 验证与停止
+ 
+-尚未获得 Product Owner 最终视觉接受；未验证真机、Safari/Firefox、真人读屏、系统文字放大或生产服务。沿用原型字体子集，新增字形可能使用系统 fallback，跨平台完整字体覆盖未验证。AI 图与 QR 不构成生产结果、扫码可用性、客户案例或兼容性证据。
++六尺寸无溢出、Hero差异0、仅Hero有大圆角媒体、桌面C2居中、三态/回撤/释放、12fallback、7resize通过；完整性记录保护既有文件。REVIEW_READY 不等于 Product Owner 已接受。尚未验证真机、Safari/Firefox、真人读屏、系统文字放大和生产服务；沿用原型字体子集，跨平台字体覆盖未验证。AI 图片与 QR 不构成生产结果、真实客户案例、可扫码性、材料/设备兼容性或 RFID 接入证据。
+ 
+-Git：main；HEAD / fresh origin/main 均为 `2e62e4eb9bf8ed72a91c22ab7a8e2498bc754c5f`；Ahead 0 / Behind 0；DirtyUpToDate。保留已授权的既有 dirty 工作区；未 commit，尚未推送。
++Git：main；HEAD 与 fresh origin/main 均为 `2e62e4eb9bf8ed72a91c22ab7a8e2498bc754c5f`；Ahead 0 / Behind 0。保留已授权的既有 dirty 工作区；未 commit，尚未推送。
+ 
+-本阶段完成后停止。下一步仅为 Product Owner / ChatGPT 评审，不自动进入Chapter4或后续实施。
++完成后停止，等待Product Owner / ChatGPT review，不自动进入下一阶段。
+--- a/docs/rebuild-audit/phase-2d-a7/Tusky-A7-Implementation-QA.md
++++ b/docs/rebuild-audit/phase-2d-a7/Tusky-A7-Implementation-QA.md
+@@ -1,36 +1,36 @@
+ # Tusky A7 Implementation QA
+ 
+-2026-09-08 · P01 当前有效 · **PHASE_2D_A7_B_P01_REVIEW_READY**
++2026-09-08 · P02当前有效 · **PHASE_2D_A7_B_P02_REVIEW_READY**
+ 
+-## 范围与运行
++## 真实验证环境与范围
+ 
+-实际修改 `prototypes/phase-2d-a5-3/tusky_phoenix/index.html`、`assets/tusky_phoenix_lifecycle.css`、`assets/tusky_phoenix_lifecycle.js` 中 C2/C3；沿用现有静态原型。Hero 与图片/字体二进制未变。localhost `http://127.0.0.1:8767/` 完整显示三章。
++TESTED：Windows / Edge 152.0.4191.66 headless / Playwright 隔离context / DPR1 / localhost HTTP，等待字体与媒体decode。只验证当前静态三章原型；未运行全站Solution Build或生产Publish。机器记录：`media-integration/patch-02/validation.json`。
+ 
+-TESTED：Windows、Edge 152.0.4191.66 headless、Playwright 隔离浏览器上下文、DPR 1、HTTP 实际载入、原生滚动/键盘。每种尺寸都等待字体与媒体 decode。机器明细为 `media-integration/patch-01/validation.json`，不得沿用旧 A7-B 的通过结论代替此次结果。
++源码改动仅为 `prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css`、同目录JS及 `index.html` 两处内部phase。HTML除phase外与P01原样一致；没有改Hero、文案、路径几何、语义顺序、alt或图片文件。
+ 
+-## 响应式与完整页面
++## 响应式与容器
+ 
+-| Viewport | Hero宽 | C2媒体宽 | C3媒体宽 | C2整章高 | C2共享画面高 | Motion |
+-|---|---:|---:|---:|---:|---:|---|
+-| 1440×900 | 1360 | 1360 | 1360 | 1382.8 | 607.2 | desktop |
+-| 1024×900 | 968 | 944 | 944 | 1181.9 | 421.5 | desktop |
+-| 820×1180 | 780 | 780 | 780 | 738.7 | 348.2 | flow |
+-| 430×932 | 398 | 398 | 398 | 898.8 | 497.3 | flow |
+-| 390×844 | 358 | 358 | 358 | 848.8 | 447.3 | flow |
+-| 320×740 | 296 | 296 | 296 | 797.2 | 369.9 | flow |
++| Viewport | Hero宽 | C2画面宽×高 | C2整章高（正常） | C3画布宽 | C3静物宽 | C3整章高 |
++|---|---:|---:|---:|---:|---:|---:|
++| 1440×900 | 1360 | 1360×607.2 | 1706.8 | 1360 | 810.9 | 760.2 |
++| 1024×900 | 968 | 944×421.5 | 1505.9 | 944 | 562.3 | 727.4 |
++| 820×1180 | 780 | 780×348.2 | 738.7 | 780 | 686.4 | 1086.8 |
++| 430×932 | 398 | 398×497.3 | 898.8 | 398 | 430.0 | 937.0 |
++| 390×844 | 358 | 358×447.3 | 848.8 | 358 | 390.0 | 907.0 |
++| 320×740 | 296 | 296×369.9 | 797.2 | 296 | 320.0 | 902.5 |
+ 
+-MEASURED：全部六尺寸 overflow=0；C2 `.lifecycle__field` 与照片宽高/顶部完全相同；信息与 trace 位于照片留白且不越过瓶体左边界；文本对比度保守采样（整个文字外接矩形的底图像素）最低 5.50:1，满足所用 3:1/4.5:1 阈值。此项仅证明该底图/颜色采样，不代替完整无障碍认证。
++MEASURED：六尺寸overflow=0；C2照片/关系场宽高与位置相同；手机C2高度及内容位置与P01一致。C2/C3 radius=0；前三章宽高均大于150px且圆角大于8px的所有元素都在Hero内，未全站移除圆角。路线文字盒无背景、边框、阴影或溢出，DOM仍为单一dl；只有1个H1、2个H2，不复制移动语义内容。
+ 
+-INSPECTED：六个 reduced 全页图用于判断 Hero → C2 → C3 的完整尺度和阅读顺序；正常动效另有 1440/390 entry/midpoint/final 六图、两张交接 viewport 图。C3 有 1440/820/390 整章元素截图（跨 viewport），不误标为单屏。另有 390 no-JS 全页，共18张本补丁证据。缩略图可点击原始截图看文字。
++C3桌面静物占整章约59.6%，不对半；820px静物686.4px、画布780px且左右错位排版；三个手机尺寸静物宽度等于viewport、边缘x=0。完整4:3图像不裁二维码或物体。六路线与描述齐全，公开文字无prototype/demo/概念示意/内部状态泄漏。
+ 
+-## 功能与冻结项
++## 冻结项、功能与观察
+ 
+-TESTED：六尺寸均 1 个 H1、2 个 H2；六路线 DOM 顺序正确；所有文字本来就在 HTML 中，没有第二份移动端语义文案。公开正文无“概念示意 / 示意 / prototype / demo / future capability / PROTOTYPE_ / NEEDS_”。状态保留在 data attributes；图片中性 alt，装饰 SVG 不增加重复语义。没有 JS 异常或 HTTP 4xx/5xx；12组静态回退、7组 resize、reduced 动态切换通过。
++VERIFIED：Hero源码前缀与输入基线完全一致，批准媒体和字体hash不变；六尺寸同浏览器稳定截图pixel channel diff均0。比较使用基线HTML/CSS/JS拦截对照、fonts.ready + decode + 500ms等待、预截图与200ms等待，控制先前遇到的异步图片栅格差异。新CSS只作用C2/C3。
+ 
+-VERIFIED：Hero 起始源码至 C2 之前的字节完全匹配 P01 输入基线；所有冻结图片/字体 hash 匹配。六尺寸 Hero 对照最终均 pixel channel diff=0。首次320截图曾有128481个通道差异，范围仅在图片栅格区；相同布局/相同字节的基线控制也可出现该差异。统一 fonts.ready + decode + 500ms 等待、一次预截图及200ms等待后，同浏览器加载 P01 前 HTML/CSS/JS 对照与当前图均为0。没有为消除测量差异修改 Hero。
++TESTED：无JS异常/HTTP资源错误；正确A/B断点；六尺寸三关系终态均1且可回撤；桌面释放正常；每个手机终态三组标签同时可见。12组reduced/no-JS静态完整、无sticky/额外行程；7组resize含700/701、961、短桌面1024×819；动态reduced切换与原生PageDown通过；闲置500ms新增RAF均0。照片文字保守像素采样最低5.50:1，属于该底图/文本颜色的局部检查。
+ 
+-本轮仅涉及独立静态原型，未运行整个网站 Solution Build 或生产发布；没有新增依赖。
++INSPECTED：六尺寸完整长页及桌面/手机正常三态、交接、C3构图。大圆角Hero → 方直开放C2 → 非对半C3可在全页判断。22张证据由gallery链接原始尺寸：6全页reduced、9正常C2三态（1440/1024/390）、4整章C3（1440/1024/820/390）、2交接、1 no-JS全页。C3截图为整章页坐标裁框、覆盖viewport全宽，可能高于一屏；不冒充单屏截图。
+ 
+-尚未获得 Product Owner 最终视觉接受；未验证真机、Safari/Firefox、真人读屏、系统文字放大或生产服务。沿用原型字体子集，新增字形可能使用系统 fallback，跨平台完整字体覆盖未验证。AI 图与 QR 不构成生产结果、扫码可用性、客户案例或兼容性证据。
++REVIEW_READY 不等于 Product Owner 已接受。尚未验证真机、Safari/Firefox、真人读屏、系统文字放大和生产服务；沿用原型字体子集，跨平台字体覆盖未验证。AI 图片与 QR 不构成生产结果、真实客户案例、可扫码性、材料/设备兼容性或 RFID 接入证据。
+ 
+-Git：main；HEAD / fresh origin/main 均为 `2e62e4eb9bf8ed72a91c22ab7a8e2498bc754c5f`；Ahead 0 / Behind 0；DirtyUpToDate。保留已授权的既有 dirty 工作区；未 commit，尚未推送。
++Git：main；HEAD 与 fresh origin/main 均为 `2e62e4eb9bf8ed72a91c22ab7a8e2498bc754c5f`；Ahead 0 / Behind 0。保留已授权的既有 dirty 工作区；未 commit，尚未推送。
+--- a/docs/rebuild-audit/phase-2d-a7/Tusky-A7-Motion-QA.md
++++ b/docs/rebuild-audit/phase-2d-a7/Tusky-A7-Motion-QA.md
+@@ -1,30 +1,25 @@
+ # Tusky A7 Motion QA
+ 
+-2026-09-08 · P01 当前有效 · **PHASE_2D_A7_B_P01_REVIEW_READY**
++2026-09-08 · P02当前有效 · **PHASE_2D_A7_B_P02_REVIEW_READY**
+ 
+-## 保留与重测
++## 改动与冻结
+ 
+-C2 仍是同一标识产生累积关系，向下补全，向上回撤；C3 选择静态。没有图片变形、镜头位移、帧序列、自动播放或滚动接管。HTML 内容始终完整。
++C2 Accumulating Relationship Trace保留同源累积、三条逐步完成、反向回撤；HTML中的所有SVG路径、标签及其几何不变。`[0,.38] / [.30,.71] / [.65,1]`三个归一化区间未变。仅桌面定位、开始/结束范围与对应停留时长调整；手机/平板仍按原可见起点80%和最后标题42%位置，未新增延长行程。C3保持静态。
+ 
+-手机在同一 B 画面内，曲线主干依次前进并分支到三组信息；宽屏三条路径汇于同一源点。共用归一化进度区间 `[0,.38] / [.30,.71] / [.65,1]`。开始按可见 SVG 起点到 viewport 80%位置，手机/平板结束按最后标题到 viewport 42%位置测量；桌面按 sticky 释放位置结束，提前24px完成。照片/字体加载、resize、700/701切换会更新几何。
++桌面条件仍宽≥961、高≥820、no-preference。用实际scene高度和实际固定/粘性页头遮挡计算居中top；当前masthead是static，遮挡0。C2在scene到达该位置后开始展开，结束在释放前24px。自然scroll行程 `clamp(560px,74vh,740px)` 让900px高时实际展开642px，接近P01的1440基线643.6px；没有为居中将已接受节奏压成318px。
+ 
+-仅 viewport 宽≥961且高≥820且无 reduced 偏好时，照片共享容器 sticky top24px，增加260–400px自然滚动行程；介绍/结语正常流动。820、所有手机及短桌面无额外延长。依赖 IntersectionObserver/ResizeObserver 与被动 scroll；每个事件只排队一帧，没有持续 RAF 循环。
++## 真实测量与视觉检查
+ 
+-## 实际结果
++| Viewport | 页头定位 / 遮挡高 | 画面高 | sticky top | entry中心 | midpoint中心 | final中心 | 最大中心误差 | 动画行程 |
++|---|---|---:|---:|---:|---:|---:|---:|---:|
++| 1440×900 | static / 0 | 607.172 | 146.414 | 449.992 | 449.992 | 449.992 | 0.008px | 642.0px |
++| 1024×900 | static / 0 | 421.453 | 239.273 | 449.992 | 449.992 | 449.992 | 0.008px | 642.0px |
+ 
+-TESTED：六尺寸用真实 scrollTo 采样0%、6%、50%、100%，6%时第一关系已开始且源点在屏内；100%时三关系均完成；回撤时第一条未满、第三条归零。所有手机终态三组标签同时可见。六尺寸原生 PageDown 均产生滚动，闲置500ms新增RAF均0。
+ 
+-| Viewport | 6%起点 y(px) | 中点关系值 | 终态 | idle新增RAF |
+-|---|---:|---|---|---:|
+-| 1440×900 | 677.3 | 1, 0.4888, 0 | 1 / 1 / 1 | 0 |
+-| 1024×900 | 671.9 | 1, 0.4881, 0 | 1 / 1 / 1 | 0 |
+-| 820×1180 | 913.0 | 1, 0.4896, 0 | 1 / 1 / 1 | 0 |
+-| 430×932 | 702.8 | 1, 0.4877, 0 | 1 / 1 / 1 | 0 |
+-| 390×844 | 636.3 | 1, 0.4872, 0 | 1 / 1 / 1 | 0 |
+-| 320×740 | 558.9 | 1, 0.4865, 0 | 1 / 1 / 1 | 0 |
++TESTED：两个桌面尺寸的entry(6%)/midpoint(50%)/final(100%+2px)均完整在viewport内且中心误差<0.1px；终态三值均1，过释放点后scene向上继续滚动、终态保持。反向回滚第一条恢复未满、第三条归零。所有六尺寸起点在屏内时有初段，三个手机的终态三组标签同时可见。
+ 
+-TESTED：12组 reduced/no-JS（各覆盖六尺寸）均显示所有文字和最终路径、无sticky/额外行程、无溢出；动态切换 reduced 并恢复、7组resize（含700/701、961及1024×819）通过。正常桌面/手机 entry→midpoint→final 和交接截图已实际查看；保留移动同源连续曲线，非通用垂直时间轴。
++INSPECTED：1440三态与1024中态确认画面不再贴顶，上下留白相称；最终线条确实延伸到标签方向，没有只凭CSS变量判断完成。正常交接截图确认从宽关系场进入不同结构的C3。具体截图和scrollY/scene bounds/关系值均在 `media-integration/patch-02/validation.json`。
+ 
+-修正一项真实渲染问题：放大宽屏 SVG 后，`pathLength` 与 `vector-effect: non-scaling-stroke` 组合导致归一化值为1时可见路径仍未到终点。移除该 vector-effect，让线宽随场景比例缩放；最终截图确认曲线完整到达标签一侧。未仅凭变量值宣称视觉完成。
++TESTED：12组reduced/no-JS均显示最终路径与完整正文、无sticky/额外行程；动态偏好切换、7组断点resize通过；PageDown正常、闲置500ms新增RAF为0。仍为事件驱动单帧排队/被动scroll，无持续RAF循环、滚动接管、图片变形、视频序列或C3附加动效。
+ 
+-全页截图明确为 reduced 静态状态，不作为“同一时刻所有 sticky 动态阶段”的证据。动态三态与交接图单独命名，取样记录包含 scrollY/关系值/标签位置。尚未获得 Product Owner 最终视觉接受；未验证真机、Safari/Firefox、真人读屏、系统文字放大或生产服务。沿用原型字体子集，新增字形可能使用系统 fallback，跨平台完整字体覆盖未验证。AI 图与 QR 不构成生产结果、扫码可用性、客户案例或兼容性证据。
++全页长图是明确标记的reduced静态回退，动态停留的entry/midpoint/final另提供viewport证据。REVIEW_READY 不等于 Product Owner 已接受。尚未验证真机、Safari/Firefox、真人读屏、系统文字放大和生产服务；沿用原型字体子集，跨平台字体覆盖未验证。AI 图片与 QR 不构成生产结果、真实客户案例、可扫码性、材料/设备兼容性或 RFID 接入证据。
+--- a/docs/rebuild-audit/phase-2d-a7/Tusky-A7-Media-QA.md
++++ b/docs/rebuild-audit/phase-2d-a7/Tusky-A7-Media-QA.md
+@@ -1,16 +1,16 @@
+ # Tusky A7 Media QA
+ 
+-2026-09-08 · P01 当前有效 · **PHASE_2D_A7_B_P01_REVIEW_READY**
++2026-09-08 · P02当前有效 · **PHASE_2D_A7_B_P02_REVIEW_READY**
+ 
+-## 媒体映射与读取
++VERIFIED：A/B/C批准PNG与现有WebP均与P02输入基线hash相同，未重新生成、编码、放大原图、翻转、擦码或写入像素。Hero图/字体亦不变。页面只改变开放边缘/版式；C3从旧宽屏16:10取景恢复全尺寸比例4:3。delta包不含未变媒体或字体。
+ 
+-VERIFIED：本补丁没有新生成、重新编码、擦码、翻转或写入 A/B/C。批准源为 `D:/Temp/ImageA.png`、`ImageB.png`、`ImageC.png`；现有项目 PNG 与 WebP 均相对于 P01 输入基线逐字节不变。完整母图保留，delta ZIP 只带路径/hash，不重复带媒体。原记录 `media-integration/media-records.json` 保留为 A7-B 历史证据。
++| ID | 像素 | 比例 | 页面用途 |
++|---|---|---|---|
++| A | 1877×838 | 2.2399:1 | C2 >700px，完整横图，radius0 |
++| B | 1122×1402 | 0.8003:1 | C2 ≤700px，同一竖图共享关系场，radius0 |
++| C | 1448×1086 | 4:3 | C3所有断点完整比例，radius0；桌面非对半、平板错位、手机通栏 |
+ 
+-| ID | 原像素 | 比例 | P01用途 |
+-|---|---|---|---|
+-| A | 1877×838 | 2.2399:1 | C2 >700px，包括820平板；完整横图 |
+-| B | 1122×1402 | 0.8003:1 | C2 ≤700px；完整竖图，曲线/文字覆盖左侧留白 |
+-| C | 1448×1086 | 4:3 | C3；宽屏16:10 CSS取景，手机完整4:3 |
++下列文件都在 `prototypes/phase-2d-a5-3/tusky_phoenix/assets/`：
+ 
+ | ID | assets文件 | bytes | SHA-256 |
+ |---|---|---:|---|
+@@ -21,14 +21,10 @@
+ | C | `tusky_phoenix_alternative_carriers.png` | 1739159 | `1632315557a1345bf55d6208bad116d9d39409ead48f726e2c2cb87b3e356cf4` |
+ | C | `tusky_phoenix_alternative_carriers.webp` | 93466 | `2d54d2d27b8704eb9addd6a7d502188095dae9f92498a16ea9f179f8fa9c1e1a` |
+ 
+-WebP合计200308 bytes；本补丁没有改变其质量或尺寸。六尺寸实际网络载入与decode正常，A/B断点资源选择正确，无404。
++TESTED：六尺寸实际HTTP读取和decode成功、A/B资源选择正确，无404；WebP总量仍200308 bytes。C2文字/关系路径位于图片留白、没有跨入瓶体；保守文字底图对比采样最低5.50:1。改变圆角没有改变底图或文字相对位置。
+ 
+-## 视觉与证据边界
++INSPECTED：A/B瓶身QR保持可见。C中白瓶、纸标签、金属牌与圆形挂片完整；前三者QR保留，圆形挂片没有QR且不标为RFID。移动C3整章截图按完整viewport宽度取景，未用仅包含窄文字容器的元素截图裁掉通栏图边缘。
+ 
+-INSPECTED：A/B 主瓶在右侧，源点、标签和曲线位于左/中留白；原QR仍在瓶体下部，无装饰覆盖。C瓶、纸标签、金属牌、右侧圆形挂片全部可见；前三个的QR保留，圆形挂片没有QR，也不认定为RFID。C宽屏裁切只调整取景，不改变文件；1440/820的实际截图确认必需物体和QR完整。
++所有媒体仍为 `AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE`。P01中性alt、两章条件句、当前能力NEEDS_VERIFICATION和金属标牌载体概念边界均原样保留。未添加公开“概念示意”caption、客户案例、结果或兼容承诺。
+ 
+-所有媒体保留 `AI_GENERATED_REALISTIC_CONCEPT_MEDIA` / `NOT_ALLOWED_AS_EVIDENCE`。中性 alt 只描述可见对象；不称真实客户案例、实际材料结果、生产验证或已实现绑定关系。
+-
+-本次 Owner 明确要求减少公开原型语言；旧“概念示意”caption已移除，旧 Decision 的逐图caption方向由 Patch01 supersede。C2在结语下保留信息/业务接入范围句，C3在媒体后的六路线说明旁保留赋码/读取/系统接入范围句；避免照片被当作任意路线已兼容的证明。描述不包含永久、耐久、全兼容、自动迁移，亦不把AI圆片当RFID实物证据。
+-
+-尚未获得 Product Owner 最终视觉接受；未验证真机、Safari/Firefox、真人读屏、系统文字放大或生产服务。沿用原型字体子集，新增字形可能使用系统 fallback，跨平台完整字体覆盖未验证。AI 图与 QR 不构成生产结果、扫码可用性、客户案例或兼容性证据。
++REVIEW_READY 不等于 Product Owner 已接受。尚未验证真机、Safari/Firefox、真人读屏、系统文字放大和生产服务；沿用原型字体子集，跨平台字体覆盖未验证。AI 图片与 QR 不构成生产结果、真实客户案例、可扫码性、材料/设备兼容性或 RFID 接入证据。
+--- a/docs/rebuild-audit/phase-2d-a7/START-HERE.html
++++ b/docs/rebuild-audit/phase-2d-a7/START-HERE.html
+@@ -1 +1 @@
+-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tusky A7-B P01 Review</title><style>body{margin:0 auto;padding:32px;max-width:1500px;font:16px/1.7 system-ui,sans-serif;color:#252824;background:#f4f4f1}h1,h2{font-weight:450}h2{margin-top:56px}a{color:#364e60}p{max-width:900px}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}figure{margin:0;background:white;padding:12px;align-self:start}img{display:block;width:100%;height:auto;max-height:700px;object-fit:contain;object-position:top}figcaption{font-size:12px;overflow-wrap:anywhere;margin-top:12px}nav{display:flex;flex-wrap:wrap;gap:16px}</style></head><body><h1>凰牙 · A7-B Patch 01</h1><p>PHASE_2D_A7_B_P01_REVIEW_READY · 等待 Product Owner / ChatGPT review。旧 A7-B 为 NOT ACCEPTED。此页只展示本补丁18张证据，点击图片可看原始尺寸。</p><nav><a href="http://127.0.0.1:8767/">本机完整交互预览</a><a href="REVIEW-MANIFEST.md">Review manifest</a><a href="Phase-2D-A7-B-Patch-01.md">补丁决策与来源表</a><a href="Tusky-A7-Implementation-QA.md">Implementation QA</a><a href="Tusky-A7-Motion-QA.md">Motion QA</a><a href="Tusky-A7-Media-QA.md">Media QA</a></nav><p>全页图使用 reduced-motion 展示完整静态内容；动效三态与交接另列。C3使用整章元素截图，可能高于viewport。ZIP中的source仅用于审查，未重复打包冻结图片/字体；离线gallery可独立浏览。</p><section><h2>完整页面：六尺寸静态回退</h2><div class="gallery"><figure><a href="media-integration/patch-01/screenshots/full-page-1440x900-reduced.webp"><img src="media-integration/patch-01/screenshots/full-page-1440x900-reduced.webp" alt="full-page-1440x900-reduced.webp · fullPage · viewport 1440×900" loading="lazy"></a><figcaption>full-page-1440x900-reduced.webp · fullPage · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/full-page-1024x900-reduced.webp"><img src="media-integration/patch-01/screenshots/full-page-1024x900-reduced.webp" alt="full-page-1024x900-reduced.webp · fullPage · viewport 1024×900" loading="lazy"></a><figcaption>full-page-1024x900-reduced.webp · fullPage · viewport 1024×900</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/full-page-820x1180-reduced.webp"><img src="media-integration/patch-01/screenshots/full-page-820x1180-reduced.webp" alt="full-page-820x1180-reduced.webp · fullPage · viewport 820×1180" loading="lazy"></a><figcaption>full-page-820x1180-reduced.webp · fullPage · viewport 820×1180</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/full-page-430x932-reduced.webp"><img src="media-integration/patch-01/screenshots/full-page-430x932-reduced.webp" alt="full-page-430x932-reduced.webp · fullPage · viewport 430×932" loading="lazy"></a><figcaption>full-page-430x932-reduced.webp · fullPage · viewport 430×932</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/full-page-390x844-reduced.webp"><img src="media-integration/patch-01/screenshots/full-page-390x844-reduced.webp" alt="full-page-390x844-reduced.webp · fullPage · viewport 390×844" loading="lazy"></a><figcaption>full-page-390x844-reduced.webp · fullPage · viewport 390×844</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/full-page-320x740-reduced.webp"><img src="media-integration/patch-01/screenshots/full-page-320x740-reduced.webp" alt="full-page-320x740-reduced.webp · fullPage · viewport 320×740" loading="lazy"></a><figcaption>full-page-320x740-reduced.webp · fullPage · viewport 320×740</figcaption></figure></div></section><section><h2>Chapter 2：正常累积动效三态</h2><div class="gallery"><figure><a href="media-integration/patch-01/screenshots/chapter2-1440x900-entry.webp"><img src="media-integration/patch-01/screenshots/chapter2-1440x900-entry.webp" alt="chapter2-1440x900-entry.webp · viewport · viewport 1440×900" loading="lazy"></a><figcaption>chapter2-1440x900-entry.webp · viewport · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/chapter2-1440x900-midpoint.webp"><img src="media-integration/patch-01/screenshots/chapter2-1440x900-midpoint.webp" alt="chapter2-1440x900-midpoint.webp · viewport · viewport 1440×900" loading="lazy"></a><figcaption>chapter2-1440x900-midpoint.webp · viewport · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/chapter2-1440x900-final.webp"><img src="media-integration/patch-01/screenshots/chapter2-1440x900-final.webp" alt="chapter2-1440x900-final.webp · viewport · viewport 1440×900" loading="lazy"></a><figcaption>chapter2-1440x900-final.webp · viewport · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/chapter2-390x844-entry.webp"><img src="media-integration/patch-01/screenshots/chapter2-390x844-entry.webp" alt="chapter2-390x844-entry.webp · viewport · viewport 390×844" loading="lazy"></a><figcaption>chapter2-390x844-entry.webp · viewport · viewport 390×844</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/chapter2-390x844-midpoint.webp"><img src="media-integration/patch-01/screenshots/chapter2-390x844-midpoint.webp" alt="chapter2-390x844-midpoint.webp · viewport · viewport 390×844" loading="lazy"></a><figcaption>chapter2-390x844-midpoint.webp · viewport · viewport 390×844</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/chapter2-390x844-final.webp"><img src="media-integration/patch-01/screenshots/chapter2-390x844-final.webp" alt="chapter2-390x844-final.webp · viewport · viewport 390×844" loading="lazy"></a><figcaption>chapter2-390x844-final.webp · viewport · viewport 390×844</figcaption></figure></div></section><section><h2>章节交接：正常滚动</h2><div class="gallery"><figure><a href="media-integration/patch-01/screenshots/transition-1440x900.webp"><img src="media-integration/patch-01/screenshots/transition-1440x900.webp" alt="transition-1440x900.webp · viewport · viewport 1440×900" loading="lazy"></a><figcaption>transition-1440x900.webp · viewport · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/transition-390x844.webp"><img src="media-integration/patch-01/screenshots/transition-390x844.webp" alt="transition-390x844.webp · viewport · viewport 390×844" loading="lazy"></a><figcaption>transition-390x844.webp · viewport · viewport 390×844</figcaption></figure></div></section><section><h2>Chapter 3：整章与六路线</h2><div class="gallery"><figure><a href="media-integration/patch-01/screenshots/chapter3-1440x900.webp"><img src="media-integration/patch-01/screenshots/chapter3-1440x900.webp" alt="chapter3-1440x900.webp · element · viewport 1440×900" loading="lazy"></a><figcaption>chapter3-1440x900.webp · element · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/chapter3-820x1180.webp"><img src="media-integration/patch-01/screenshots/chapter3-820x1180.webp" alt="chapter3-820x1180.webp · element · viewport 820×1180" loading="lazy"></a><figcaption>chapter3-820x1180.webp · element · viewport 820×1180</figcaption></figure><figure><a href="media-integration/patch-01/screenshots/chapter3-390x844.webp"><img src="media-integration/patch-01/screenshots/chapter3-390x844.webp" alt="chapter3-390x844.webp · element · viewport 390×844" loading="lazy"></a><figcaption>chapter3-390x844.webp · element · viewport 390×844</figcaption></figure></div></section><section><h2>关闭 JavaScript：完整页面</h2><div class="gallery"><figure><a href="media-integration/patch-01/screenshots/full-page-390x844-no-js.webp"><img src="media-integration/patch-01/screenshots/full-page-390x844-no-js.webp" alt="full-page-390x844-no-js.webp · fullPage · viewport 390×844" loading="lazy"></a><figcaption>full-page-390x844-no-js.webp · fullPage · viewport 390×844</figcaption></figure></div></section></body></html>
++<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tusky A7-B P02 Review</title><style>body{margin:0 auto;padding:32px;max-width:1500px;font:16px/1.7 system-ui,sans-serif;color:#252824;background:#f4f4f1}h1,h2{font-weight:450}h2{margin-top:56px}a{color:#364e60}p{max-width:960px}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}figure{margin:0;background:white;padding:12px;align-self:start}img{display:block;width:100%;height:auto;max-height:700px;object-fit:contain;object-position:top}figcaption{font-size:12px;overflow-wrap:anywhere;margin-top:12px}nav{display:flex;flex-wrap:wrap;gap:16px}</style></head><body><h1>凰牙 · A7-B Patch 02</h1><p>PHASE_2D_A7_B_P02_REVIEW_READY · 等待 Product Owner / ChatGPT review。P01为NOT ACCEPTED。此页只展示本补丁22张证据，点击图片可看原始尺寸。</p><nav><a href="http://127.0.0.1:8767/">本机完整交互预览</a><a href="REVIEW-MANIFEST.md">Review manifest</a><a href="Phase-2D-A7-B-Patch-02.md">P02决策与交接</a><a href="Tusky-A7-Implementation-QA.md">Implementation QA</a><a href="Tusky-A7-Motion-QA.md">Motion QA</a><a href="Tusky-A7-Media-QA.md">Media QA</a></nav><p>Hero保持大圆角；C2是居中的开放关系场；C3采用非对半静物与开放路线文字。长图为reduced静态回退，正常三态与交接另列。C3截图覆盖整章和viewport全宽；ZIP的source是审查副本，完整交互请打开localhost。</p><section><h2>完整页面：三章空间表达</h2><div class="gallery"><figure><a href="media-integration/patch-02/screenshots/full-page-1440x900-reduced.webp"><img src="media-integration/patch-02/screenshots/full-page-1440x900-reduced.webp" alt="full-page-1440x900-reduced.webp · fullPage · viewport 1440×900" loading="lazy"></a><figcaption>full-page-1440x900-reduced.webp · fullPage · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/full-page-1024x900-reduced.webp"><img src="media-integration/patch-02/screenshots/full-page-1024x900-reduced.webp" alt="full-page-1024x900-reduced.webp · fullPage · viewport 1024×900" loading="lazy"></a><figcaption>full-page-1024x900-reduced.webp · fullPage · viewport 1024×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/full-page-820x1180-reduced.webp"><img src="media-integration/patch-02/screenshots/full-page-820x1180-reduced.webp" alt="full-page-820x1180-reduced.webp · fullPage · viewport 820×1180" loading="lazy"></a><figcaption>full-page-820x1180-reduced.webp · fullPage · viewport 820×1180</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/full-page-430x932-reduced.webp"><img src="media-integration/patch-02/screenshots/full-page-430x932-reduced.webp" alt="full-page-430x932-reduced.webp · fullPage · viewport 430×932" loading="lazy"></a><figcaption>full-page-430x932-reduced.webp · fullPage · viewport 430×932</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/full-page-390x844-reduced.webp"><img src="media-integration/patch-02/screenshots/full-page-390x844-reduced.webp" alt="full-page-390x844-reduced.webp · fullPage · viewport 390×844" loading="lazy"></a><figcaption>full-page-390x844-reduced.webp · fullPage · viewport 390×844</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/full-page-320x740-reduced.webp"><img src="media-integration/patch-02/screenshots/full-page-320x740-reduced.webp" alt="full-page-320x740-reduced.webp · fullPage · viewport 320×740" loading="lazy"></a><figcaption>full-page-320x740-reduced.webp · fullPage · viewport 320×740</figcaption></figure></div></section><section><h2>Chapter 2：居中与累积三态</h2><div class="gallery"><figure><a href="media-integration/patch-02/screenshots/chapter2-1440x900-entry.webp"><img src="media-integration/patch-02/screenshots/chapter2-1440x900-entry.webp" alt="chapter2-1440x900-entry.webp · viewport · viewport 1440×900" loading="lazy"></a><figcaption>chapter2-1440x900-entry.webp · viewport · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter2-1440x900-midpoint.webp"><img src="media-integration/patch-02/screenshots/chapter2-1440x900-midpoint.webp" alt="chapter2-1440x900-midpoint.webp · viewport · viewport 1440×900" loading="lazy"></a><figcaption>chapter2-1440x900-midpoint.webp · viewport · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter2-1440x900-final.webp"><img src="media-integration/patch-02/screenshots/chapter2-1440x900-final.webp" alt="chapter2-1440x900-final.webp · viewport · viewport 1440×900" loading="lazy"></a><figcaption>chapter2-1440x900-final.webp · viewport · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter2-1024x900-entry.webp"><img src="media-integration/patch-02/screenshots/chapter2-1024x900-entry.webp" alt="chapter2-1024x900-entry.webp · viewport · viewport 1024×900" loading="lazy"></a><figcaption>chapter2-1024x900-entry.webp · viewport · viewport 1024×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter2-1024x900-midpoint.webp"><img src="media-integration/patch-02/screenshots/chapter2-1024x900-midpoint.webp" alt="chapter2-1024x900-midpoint.webp · viewport · viewport 1024×900" loading="lazy"></a><figcaption>chapter2-1024x900-midpoint.webp · viewport · viewport 1024×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter2-1024x900-final.webp"><img src="media-integration/patch-02/screenshots/chapter2-1024x900-final.webp" alt="chapter2-1024x900-final.webp · viewport · viewport 1024×900" loading="lazy"></a><figcaption>chapter2-1024x900-final.webp · viewport · viewport 1024×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter2-390x844-entry.webp"><img src="media-integration/patch-02/screenshots/chapter2-390x844-entry.webp" alt="chapter2-390x844-entry.webp · viewport · viewport 390×844" loading="lazy"></a><figcaption>chapter2-390x844-entry.webp · viewport · viewport 390×844</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter2-390x844-midpoint.webp"><img src="media-integration/patch-02/screenshots/chapter2-390x844-midpoint.webp" alt="chapter2-390x844-midpoint.webp · viewport · viewport 390×844" loading="lazy"></a><figcaption>chapter2-390x844-midpoint.webp · viewport · viewport 390×844</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter2-390x844-final.webp"><img src="media-integration/patch-02/screenshots/chapter2-390x844-final.webp" alt="chapter2-390x844-final.webp · viewport · viewport 390×844" loading="lazy"></a><figcaption>chapter2-390x844-final.webp · viewport · viewport 390×844</figcaption></figure></div></section><section><h2>章节交接</h2><div class="gallery"><figure><a href="media-integration/patch-02/screenshots/transition-1440x900.webp"><img src="media-integration/patch-02/screenshots/transition-1440x900.webp" alt="transition-1440x900.webp · viewport · viewport 1440×900" loading="lazy"></a><figcaption>transition-1440x900.webp · viewport · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/transition-390x844.webp"><img src="media-integration/patch-02/screenshots/transition-390x844.webp" alt="transition-390x844.webp · viewport · viewport 390×844" loading="lazy"></a><figcaption>transition-390x844.webp · viewport · viewport 390×844</figcaption></figure></div></section><section><h2>Chapter 3：完整构图</h2><div class="gallery"><figure><a href="media-integration/patch-02/screenshots/chapter3-1440x900.webp"><img src="media-integration/patch-02/screenshots/chapter3-1440x900.webp" alt="chapter3-1440x900.webp · chapter · viewport 1440×900" loading="lazy"></a><figcaption>chapter3-1440x900.webp · chapter · viewport 1440×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter3-1024x900.webp"><img src="media-integration/patch-02/screenshots/chapter3-1024x900.webp" alt="chapter3-1024x900.webp · chapter · viewport 1024×900" loading="lazy"></a><figcaption>chapter3-1024x900.webp · chapter · viewport 1024×900</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter3-820x1180.webp"><img src="media-integration/patch-02/screenshots/chapter3-820x1180.webp" alt="chapter3-820x1180.webp · chapter · viewport 820×1180" loading="lazy"></a><figcaption>chapter3-820x1180.webp · chapter · viewport 820×1180</figcaption></figure><figure><a href="media-integration/patch-02/screenshots/chapter3-390x844.webp"><img src="media-integration/patch-02/screenshots/chapter3-390x844.webp" alt="chapter3-390x844.webp · chapter · viewport 390×844" loading="lazy"></a><figcaption>chapter3-390x844.webp · chapter · viewport 390×844</figcaption></figure></div></section><section><h2>关闭JavaScript</h2><div class="gallery"><figure><a href="media-integration/patch-02/screenshots/full-page-390x844-no-js.webp"><img src="media-integration/patch-02/screenshots/full-page-390x844-no-js.webp" alt="full-page-390x844-no-js.webp · fullPage · viewport 390×844" loading="lazy"></a><figcaption>full-page-390x844-no-js.webp · fullPage · viewport 390×844</figcaption></figure></div></section></body></html>

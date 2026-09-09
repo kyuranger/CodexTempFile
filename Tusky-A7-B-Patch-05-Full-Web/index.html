@@ -73,9 +73,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 78svh;
-      min-height: 600px;
-      max-height: 760px;
+      height: calc(100svh - 92px);
+      min-height: 500px;
       padding-bottom: 2rem;
       overflow: hidden;
       border-radius: 26px;
@@ -178,14 +177,13 @@
       }
 
       .hero-frame {
-        height: 70svh;
-        min-height: 580px;
-        max-height: 680px;
+        height: calc(100svh - 88px);
+        min-height: 500px;
         border-radius: 22px;
       }
 
       .hero-photo {
-        object-position: 10% 50%;
+        object-position: 65% 50%;
       }
 
       .hero-primary-copy {
@@ -478,7 +476,25 @@
     }
   </style>
   <link rel="stylesheet" href="assets/tusky_phoenix_lifecycle.css">
-  <script type="module" src="assets/tusky_phoenix_lifecycle.js"></script>
+  <script type="module">
+    // Keep the complete HTML fallback; report enhancement failure explicitly.
+    const chapter = document.querySelector('.lifecycle');
+    chapter.dataset.runtime = 'loading';
+    try {
+      await import('./assets/tusky_phoenix_lifecycle.js');
+    } catch (error) {
+      delete chapter.dataset.motion;
+      delete chapter.dataset.resolved;
+      chapter.dataset.runtime = 'error';
+      chapter.dataset.fallback = 'module-error';
+      [0, 1, 2].forEach(i => chapter.style.removeProperty(`--relation-${i}`));
+      chapter.querySelectorAll('.lifecycle__context').forEach(context => {
+        delete context.dataset.emphasis;
+        context.removeAttribute('aria-current');
+      });
+      console.error('Lifecycle enhancement failed; complete static content retained.', error);
+    }
+  </script>
 </head>
 <body>
   <header class="masthead">
@@ -516,7 +532,7 @@
         </ul>
       </div>
     </section>
-    <section class="lifecycle" id="product-lifecycle" aria-labelledby="lifecycle-heading" data-phase="phase-2d-a7-b-p04" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-claim-status="SOURCE_SUPPORTED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE">
+    <section class="lifecycle" id="product-lifecycle" aria-labelledby="lifecycle-heading" data-phase="phase-2d-a7-b-p05" data-runtime="uninitialized" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-claim-status="SOURCE_SUPPORTED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE">
       <div class="lifecycle__track">
         <div class="lifecycle__story-stage">
           <header class="lifecycle__intro">

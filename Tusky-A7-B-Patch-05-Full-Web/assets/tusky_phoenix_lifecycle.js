@@ -1,4 +1,4 @@
-// A7-B P04. Proposition, accumulating relations and resolution share one stage.
+// A7-B P05. Preserve the accepted native-scroll relationship choreography.
 const chapter = document.querySelector('.lifecycle');
 if (chapter) {
   const track = chapter.querySelector('.lifecycle__track');
@@ -6,7 +6,7 @@ if (chapter) {
   const contexts = [...chapter.querySelectorAll('.lifecycle__context')];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const narrow = matchMedia('(max-width: 700px)');
-  const canPin = matchMedia('(min-height: 700px)');
+  let pinning = false;
   const ranges = [[0, .27], [.34, .60], [.67, .93]];
   const clamp = value => Math.max(0, Math.min(1, value));
   let frame = 0;
@@ -16,8 +16,9 @@ if (chapter) {
   function geometry() {
     const { width, height } = scene.getBoundingClientRect();
     const mobile = narrow.matches;
-    const [sourceWidth, sourceHeight, qrX, qrY, position] = mobile
-      ? [1122, 1402, 696, 976, .5] : [1877, 838, 1390, 612, .7];
+    const [sourceWidth, sourceHeight, qrX, qrY] = mobile
+      ? [1122, 1402, 696, 976] : [1877, 838, 1390, 612];
+    const position = parseFloat(getComputedStyle(chapter.querySelector('.lifecycle__photo img')).objectPosition) / 100;
     const scale = Math.max(width / sourceWidth, height / sourceHeight);
     // Map the unchanged image's QR edge through object-fit: cover. The origin
     // stays just outside the QR, including after orientation/viewport changes.
@@ -38,7 +39,7 @@ if (chapter) {
   }
   function paint() {
     frame = 0;
-    if (reduced.matches || !canPin.matches) return;
+    if (!pinning) return;
     const bounds = track.getBoundingClientRect();
     const stageHeight = scene.getBoundingClientRect().height;
     const stickyTop = parseFloat(getComputedStyle(scene).top) || 0;
@@ -53,14 +54,34 @@ if (chapter) {
     });
   }
   function schedule() {
-    if (inView && !reduced.matches && canPin.matches && !frame) frame = requestAnimationFrame(paint);
+    if (inView && pinning && !frame) frame = requestAnimationFrame(paint);
+  }
+  function layoutFits() {
+    const stage = scene.getBoundingClientRect();
+    const top = parseFloat(getComputedStyle(scene).top) || 0;
+    const intro = chapter.querySelector('.lifecycle__intro').getBoundingClientRect();
+    const resolution = chapter.querySelector('.lifecycle__resolution').getBoundingClientRect();
+    const boxes = contexts.map(context => context.getBoundingClientRect());
+    // Check the actual pinned composition, including the largest mobile emphasis.
+    return stage.height + top <= innerHeight + 1
+      && intro.bottom + 12 <= boxes[0].top
+      && boxes.every((box, index) => box.bottom + 12 <= (boxes[index + 1]?.top ?? resolution.top));
   }
   function configure() {
     if (frame) cancelAnimationFrame(frame);
     frame = 0;
-    if (reduced.matches || !canPin.matches) {
+    pinning = false;
+    const capable = CSS.supports('position', 'sticky');
+    if (!reduced.matches && capable) {
+      chapter.dataset.motion = narrow.matches ? 'mobile' : 'desktop';
+      contexts.forEach(context => { context.dataset.emphasis = 'current'; });
+      pinning = layoutFits();
+    }
+    if (!pinning) {
       delete chapter.dataset.motion;
       delete chapter.dataset.resolved;
+      chapter.dataset.runtime = 'static';
+      chapter.dataset.fallback = reduced.matches ? 'reduced-motion' : capable ? 'layout' : 'sticky-unsupported';
       contexts.forEach((context, index) => {
         chapter.style.removeProperty(`--relation-${index}`);
         delete context.dataset.emphasis;
@@ -69,12 +90,15 @@ if (chapter) {
       if (listening) removeEventListener('scroll', schedule);
       listening = false;
     } else {
-      chapter.dataset.motion = narrow.matches ? 'mobile' : 'desktop';
+      delete chapter.dataset.fallback;
       if (!listening) addEventListener('scroll', schedule, { passive: true });
       listening = true;
     }
     geometry();
-    if (!reduced.matches && canPin.matches) paint();
+    if (pinning) {
+      paint();
+      chapter.dataset.runtime = 'active';
+    }
   }
   new IntersectionObserver(entries => {
     inView = entries[0].isIntersecting;
@@ -83,7 +107,6 @@ if (chapter) {
   new ResizeObserver(() => { geometry(); schedule(); }).observe(scene);
   reduced.addEventListener('change', configure);
   narrow.addEventListener('change', configure);
-  canPin.addEventListener('change', configure);
   addEventListener('resize', configure, { passive: true });
   addEventListener('pageshow', configure);
   document.fonts.ready.then(configure);

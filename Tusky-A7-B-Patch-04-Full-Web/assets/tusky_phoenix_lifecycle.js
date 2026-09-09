@@ -1,11 +1,12 @@
-// A7-B P03. Native scrolling reveals three relations in one persistent canvas.
+// A7-B P04. Proposition, accumulating relations and resolution share one stage.
 const chapter = document.querySelector('.lifecycle');
 if (chapter) {
   const track = chapter.querySelector('.lifecycle__track');
-  const scene = chapter.querySelector('.lifecycle__scene');
+  const scene = chapter.querySelector('.lifecycle__story-stage');
   const contexts = [...chapter.querySelectorAll('.lifecycle__context')];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const narrow = matchMedia('(max-width: 700px)');
+  const canPin = matchMedia('(min-height: 700px)');
   const ranges = [[0, .27], [.34, .60], [.67, .93]];
   const clamp = value => Math.max(0, Math.min(1, value));
   let frame = 0;
@@ -26,22 +27,24 @@ if (chapter) {
     const origin = svg.querySelector('.lifecycle__origin');
     origin.setAttribute('cx', x.toFixed(2));
     origin.setAttribute('cy', y.toFixed(2));
-    const ends = mobile ? [[445, 200], [445, 400], [445, 600]] : [[240, 210], [405, 430], [285, 680]];
+    const ends = mobile ? [[445, 365], [445, 515], [445, 665]] : [[235, 370], [410, 525], [285, 680]];
     svg.querySelectorAll('.lifecycle__connection').forEach((path, i) => {
       const [endX, endY] = ends[i];
+      const radius = Math.min(30, Math.max(4, (y - endY) / 2));
       path.setAttribute('d', mobile
-        ? `M${x} ${y}H570Q500 ${y} 500 ${y - 70}V${endY + 30}Q500 ${endY} 470 ${endY}H${endX}`
+        ? `M${x} ${y}H560Q500 ${y} 500 ${y - radius}V${endY + radius}Q500 ${endY} ${500 - radius} ${endY}H${endX}`
         : `M${x} ${y}H${Math.min(x - 24, 650)}C550 ${y} 550 ${endY} ${endX} ${endY}`);
     });
   }
   function paint() {
     frame = 0;
-    if (reduced.matches) return;
+    if (reduced.matches || !canPin.matches) return;
     const bounds = track.getBoundingClientRect();
     const stageHeight = scene.getBoundingClientRect().height;
     const stickyTop = parseFloat(getComputedStyle(scene).top) || 0;
     const progress = clamp((stickyTop - bounds.top) / Math.max(1, bounds.height - stageHeight));
     const current = progress < .34 ? 0 : progress < .67 ? 1 : 2;
+    chapter.dataset.resolved = String(progress >= .93);
     ranges.forEach(([from, to], index) => {
       chapter.style.setProperty(`--relation-${index}`, clamp((progress - from) / (to - from)).toFixed(4));
       contexts[index].dataset.emphasis = index === current ? 'current' : index < current ? 'completed' : 'future';
@@ -50,13 +53,14 @@ if (chapter) {
     });
   }
   function schedule() {
-    if (inView && !reduced.matches && !frame) frame = requestAnimationFrame(paint);
+    if (inView && !reduced.matches && canPin.matches && !frame) frame = requestAnimationFrame(paint);
   }
   function configure() {
     if (frame) cancelAnimationFrame(frame);
     frame = 0;
-    if (reduced.matches) {
+    if (reduced.matches || !canPin.matches) {
       delete chapter.dataset.motion;
+      delete chapter.dataset.resolved;
       contexts.forEach((context, index) => {
         chapter.style.removeProperty(`--relation-${index}`);
         delete context.dataset.emphasis;
@@ -70,7 +74,7 @@ if (chapter) {
       listening = true;
     }
     geometry();
-    if (!reduced.matches) paint();
+    if (!reduced.matches && canPin.matches) paint();
   }
   new IntersectionObserver(entries => {
     inView = entries[0].isIntersecting;
@@ -79,6 +83,7 @@ if (chapter) {
   new ResizeObserver(() => { geometry(); schedule(); }).observe(scene);
   reduced.addEventListener('change', configure);
   narrow.addEventListener('change', configure);
+  canPin.addEventListener('change', configure);
   addEventListener('resize', configure, { passive: true });
   addEventListener('pageshow', configure);
   document.fonts.ready.then(configure);

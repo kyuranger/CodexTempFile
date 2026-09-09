@@ -1,0 +1,360 @@
+--- a/prototypes/phase-2d-a5-3/tusky_phoenix/index.html
++++ b/prototypes/phase-2d-a5-3/tusky_phoenix/index.html
+@@ -23,11 +23,22 @@
+       font-synthesis: none;
+       color: #202124;
+       background: #fff;
+-      --ink: #202124;
+-      --identity: #716c66;
+-      --support: #60646b;
+-      --cue: #666a70;
++      --type-display: #202124;
++      --type-section: #252b25;
++      --type-identity: #716c66;
++      --type-lead: #596058;
++      --type-detail: #60665f;
++      --type-secondary: #696f68;
++      --ink: var(--type-display);
++      --identity: var(--type-identity);
++      --support: var(--type-lead);
++      --cue: var(--type-detail);
+       --cue-line: #716c66;
++      --story-gutter: 40px;
++      --story-max-width: 1600px;
++      --story-radius: 26px;
++      --story-width: min(calc(100% - 2 * var(--story-gutter)), var(--story-max-width));
++      --story-inset: max(var(--story-gutter), calc((100% - var(--story-max-width)) / 2));
+     }
+ 
+     * {
+@@ -63,8 +74,7 @@
+     }
+ 
+     .hero {
+-      width: calc(100% - 80px);
+-      max-width: 1600px;
++      width: var(--story-width);
+       margin: 28px auto 32px;
+     }
+ 
+@@ -77,7 +87,7 @@
+       min-height: 500px;
+       padding-bottom: 2rem;
+       overflow: hidden;
+-      border-radius: 26px;
++      border-radius: var(--story-radius);
+       background: #f3f2ef;
+     }
+ 
+@@ -167,8 +177,8 @@
+     }
+ 
+     @media (max-width: 1100px) {
+-      .masthead,
+-      .hero {
++      :root { --story-gutter: 28px; --story-radius: 22px; }
++      .masthead {
+         width: calc(100% - 56px);
+       }
+ 
+@@ -179,7 +189,6 @@
+       .hero-frame {
+         height: calc(100svh - 120px);
+         min-height: 500px;
+-        border-radius: 22px;
+       }
+ 
+       .hero-photo {
+@@ -533,7 +542,7 @@
+         </ul>
+       </div>
+     </section>
+-    <section class="lifecycle" id="product-lifecycle" aria-labelledby="lifecycle-heading" data-phase="phase-2d-a7-b-p06" data-runtime="uninitialized" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-claim-status="SOURCE_SUPPORTED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE">
++    <section class="lifecycle" id="product-lifecycle" aria-labelledby="lifecycle-heading" data-phase="phase-2d-a7-b-p07" data-runtime="uninitialized" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-claim-status="SOURCE_SUPPORTED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE">
+       <div class="lifecycle__track">
+         <div class="lifecycle__story-stage">
+           <div class="lifecycle__canvas">
+@@ -582,10 +591,10 @@
+         </div>
+       </div>
+     </section>
+-    <section class="carriers" id="alternative-carriers" aria-labelledby="carriers-heading" data-phase="phase-2d-a7-b-p02" data-story="One Object, Alternative Carriers" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE" data-current-capability-status="NEEDS_VERIFICATION">
++    <section class="carriers" id="alternative-carriers" aria-labelledby="carriers-heading" data-phase="phase-2d-a7-b-p07" data-story="One Object, Alternative Carriers" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE" data-current-capability-status="NEEDS_VERIFICATION">
+       <header class="carriers__intro">
+         <p class="carriers__eyebrow">标识与载体</p>
+-        <h2 id="carriers-heading"><span>标识，</span><span>落在合适的载体上</span></h2>
++        <h2 id="carriers-heading"><span>标识<span class="carriers__comma">，</span></span><span>落在合适的载体上</span></h2>
+         <p class="carriers__lead">标识可以直接形成在产品表面，也可以借助独立载体。先看材料、包装与使用条件，再选择赋码和读取方式。</p>
+       </header>
+       <figure class="carriers__media">
+@@ -596,10 +605,10 @@
+         <dl class="carriers__routes" aria-labelledby="carriers-routes-label">
+           <div><dt>喷码</dt><dd>油墨形成标识</dd></div>
+           <div><dt>激光标识</dt><dd>材料表面的标识工艺</dd></div>
++          <div><dt>TTO</dt><dd>热转印赋码</dd></div>
+           <div><dt>标签</dt><dd>贴附式载体</dd></div>
+           <div data-descriptor-status="CARRIER_CONCEPT_NOT_COMPATIBILITY"><dt>金属标牌</dt><dd>独立标识载体</dd></div>
+           <div><dt>RFID</dt><dd>射频识别技术</dd></div>
+-          <div><dt>TTO</dt><dd>热转印赋码</dd></div>
+         </dl>
+         <p class="carriers__scope">具体赋码、读取与系统接入方式，需结合实际应用确认。</p>
+       </div>
+--- a/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css
++++ b/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css
+@@ -1,4 +1,4 @@
+-/* A7-B P06. Viewport-safe framing and an early spatial handoff. */
++/* A7-B P07. Shared entry frame, typography roles and chapter breathing. */
+ @font-face {
+   font-family: "Tusky Lifecycle";
+   font-style: normal;
+@@ -15,7 +15,7 @@
+ }
+ .carriers__eyebrow {
+   margin: 0 0 16px;
+-  color: #66615b;
++  color: var(--type-identity);
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 1.5;
+@@ -26,16 +26,16 @@
+   font-weight: 350;
+   line-height: 1.28;
+ }
+-.carriers h2 span { display: inline-block; }
++.carriers h2 > span { display: inline-block; }
+ .carriers__lead {
+   max-width: 42em;
+   margin: 20px 0 0;
+-  color: #555951;
++  color: var(--type-lead);
+   font-size: 16px;
+   line-height: 1.85;
+   text-wrap: pretty;
+ }
+-.carriers__scope { margin: 12px 0 0; color: #60645c; font-size: 13px; line-height: 1.8; }
++.carriers__scope { margin: 12px 0 0; color: var(--type-secondary); font-size: 13px; line-height: 1.8; }
+ .carriers {
+   display: grid;
+   grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+@@ -45,7 +45,7 @@
+ }
+ .carriers__intro { grid-column: 2; grid-row: 1; max-width: none; margin: 0; text-align: left; }
+ .carriers h2 { font-size: clamp(34px, 3.2vw, 50px); }
+-.carriers h2 span { display: block; }
++.carriers h2 > span { display: block; }
+ .carriers__media { grid-column: 1; grid-row: 1 / span 2; align-self: center; margin: 0; }
+ .carriers__media img {
+   display: block;
+@@ -56,18 +56,18 @@
+   border-radius: 0;
+ }
+ .carriers__choices { grid-column: 2; grid-row: 2; margin: 0; align-self: end; }
+-.carriers__routes-label { margin: 0 0 20px; color: #62655e; font-size: 13px; line-height: 1.5; }
++.carriers__routes-label { margin: 0 0 20px; color: var(--type-identity); font-size: 13px; line-height: 1.5; }
+ .carriers__routes { display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px 24px; margin: 0; }
+ .carriers__routes > div { min-width: 0; }
+-.carriers__routes dt { color: #2d312c; font-size: 22px; font-weight: 350; line-height: 1.4; }
+-.carriers__routes dd { margin: 7px 0 0; color: #555951; font-size: 13px; line-height: 1.7; }
++.carriers__routes dt { color: var(--type-section); font-size: 22px; font-weight: 350; line-height: 1.4; }
++.carriers__routes dd { margin: 7px 0 0; color: var(--type-detail); font-size: 13px; line-height: 1.7; }
+ .carriers__scope { margin-top: 24px; }
+ @media (max-width: 960px) {
+ .carriers { width: calc(100% - 40px); }
+ .carriers { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 48px 0 64px; }
+ .carriers__intro { grid-column: 1; grid-row: 1; width: 90%; max-width: none; justify-self: end; margin-bottom: 32px; }
+ .carriers h2 { font-size: 40px; }
+-.carriers h2 span { display: inline-block; }
++.carriers h2 > span { display: inline-block; }
+ .carriers__media { grid-column: 1; grid-row: 2; width: 88%; justify-self: start; }
+ .carriers__choices { grid-column: 1; grid-row: 3; width: 88%; justify-self: end; margin-top: 32px; }
+ .carriers__routes { grid-template-columns: 1.05fr 1.35fr 1fr; column-gap: 28px; }
+@@ -76,7 +76,7 @@
+ .carriers { width: calc(100% - 32px); }
+ .carriers__eyebrow { margin-bottom: 14px; font-size: 12px; }
+ .carriers h2 { font-size: 32px; line-height: 1.38; }
+-.carriers h2 span { display: block; }
++.carriers h2 > span { display: block; }
+ .carriers__lead { margin-top: 18px; font-size: 14px; line-height: 1.85; }
+ .carriers__scope { font-size: 12px; line-height: 1.85; }
+ .carriers { padding: 32px 0 56px; }
+@@ -96,8 +96,13 @@
+ 
+ /* One immersive C2 stage contains the proposition, relations and resolution. */
+ .lifecycle {
++  /* Photo-backed text needs denser role tones than the white page surface. */
++  --type-identity: #595247;
++  --type-lead: #495247;
++  --type-detail: #4b5249;
++  --type-secondary: #514938;
+   --trace-ink: #746d63;
+-  --entry: 1; --entry-x: 4%; --entry-y: 6%;
++  --entry: 1; --entry-x: 4%; --entry-y: 6%; --entry-radius: 0px;
+   --relation-0: 1; --relation-1: 1; --relation-2: 1;
+   width: 100%; margin: 0; padding: 0; position: relative; contain: paint;
+   font-family: "Tusky Lifecycle", "Noto Sans SC", sans-serif; font-synthesis: none;
+@@ -108,10 +113,10 @@
+ .lifecycle__photo { position: absolute; inset: 0; display: block; }
+ .lifecycle__photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 70% 50%; border-radius: 0; }
+ .lifecycle__intro { position: absolute; z-index: 1; top: 6%; left: 6%; width: 66%; }
+-.lifecycle__eyebrow { margin: 0 0 14px; font-size: 13px; line-height: 1.5; color: #4b4d46; }
+-.lifecycle h2 { margin: 0; font-size: clamp(34px, 3.6vw, 52px); font-weight: 350; line-height: 1.3; }
++.lifecycle__eyebrow { margin: 0 0 14px; font-size: 13px; line-height: 1.5; color: var(--type-identity); }
++.lifecycle h2 { margin: 0; color: var(--type-section); font-size: clamp(44px, 3.9vw, 58px); font-weight: 350; line-height: 1.3; }
+ .lifecycle h2 > span { display: inline-block; }
+-.lifecycle__lead { max-width: 37em; margin: 18px 0 0; font-size: 16px; line-height: 1.75; color: #3a3d37; text-wrap: pretty; }
++.lifecycle__lead { max-width: 37em; margin: 18px 0 0; font-size: 16px; line-height: 1.75; color: var(--type-lead); text-wrap: pretty; }
+ .lifecycle__field { position: absolute; inset: 0; }
+ .lifecycle__connections { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--trace-ink); stroke-width: 1.1; pointer-events: none; }
+ .lifecycle__connections--compact { display: none; }
+@@ -121,17 +126,17 @@
+ .lifecycle [data-relation="1"] { --relation: var(--relation-1); }
+ .lifecycle [data-relation="2"] { --relation: var(--relation-2); }
+ .lifecycle__contexts { margin: 0; padding: 0; list-style: none; }
+-.lifecycle__context { position: absolute; width: 24%; margin: 0; color: #202124; }
+-.lifecycle__context h3 { margin: 0; font-size: clamp(24px, 2.2vw, 32px); font-weight: 350; line-height: 1.32; }
+-.lifecycle__context p { margin: 8px 0 0; color: #3a3d37; font-size: clamp(13px, 1.1vw, 16px); line-height: 1.65; }
++.lifecycle__context { position: absolute; width: 24%; margin: 0; color: var(--type-section); }
++.lifecycle__context h3 { margin: 0; font-size: clamp(28px, 2.1vw, 32px); font-weight: 350; line-height: 1.32; }
++.lifecycle__context p { margin: 8px 0 0; color: var(--type-detail); font-size: 14px; line-height: 1.65; }
+ .lifecycle__context p span { display: block; }
+ .lifecycle__context--production { left: 6%; top: 34%; }
+ .lifecycle__context--distribution { left: 24%; top: 49.5%; }
+ .lifecycle__context--service { left: 11%; top: 65%; }
+ .lifecycle__resolution { position: absolute; z-index: 1; left: 6%; bottom: 6%; width: 60%; max-width: 800px; }
+-.lifecycle__closing { margin: 0; font-size: clamp(19px, 1.7vw, 24px); font-weight: 400; line-height: 1.6; color: #202124; text-wrap: pretty; }
+-.lifecycle__scope { margin: 10px 0 0; color: #3e403a; font-size: 13px; line-height: 1.75; }
+-.lifecycle[data-resolved="false"] .lifecycle__closing { color: #3e403a; font-weight: 350; }
++.lifecycle__closing { margin: 0; font-size: clamp(20px, 1.5vw, 22px); font-weight: 400; line-height: 1.6; color: var(--type-section); text-wrap: pretty; }
++.lifecycle__scope { margin: 10px 0 0; color: var(--type-secondary); font-size: 12px; line-height: 1.75; }
++.lifecycle[data-resolved="false"] .lifecycle__closing { color: var(--type-lead); font-weight: 350; }
+ @media (min-width: 701px) and (max-width: 960px) {
+   .lifecycle__story-stage { height: max(700px, 95svh); }
+   .lifecycle__photo img { object-position: 75% 50%; }
+@@ -174,13 +179,13 @@
+   .lifecycle[data-motion="desktop"] .lifecycle__story-stage { position: sticky; top: 0; }
+   .lifecycle[data-motion="mobile"] .lifecycle__track { height: 210svh; }
+   .lifecycle[data-motion="mobile"] .lifecycle__story-stage { position: sticky; top: 7svh; height: 86svh; }
+-  .lifecycle[data-motion="mobile"] .lifecycle__context { color: #4b4d46; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context { color: var(--type-detail); }
+   .lifecycle[data-motion="mobile"] .lifecycle__context h3 { font-size: 17px; }
+-  .lifecycle[data-motion="mobile"] .lifecycle__context p { color: #4b4d46; font-size: 12px; }
+-  .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="current"] { color: #202124; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context p { color: var(--type-detail); font-size: 12px; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="current"] { color: var(--type-section); }
+   .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="current"] h3 { font-size: 26px; }
+-  .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="current"] p { color: #30322e; font-size: 13px; }
+-  .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="completed"] h3 { color: #3e403a; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="current"] p { color: var(--type-lead); font-size: 13px; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="completed"] h3 { color: var(--type-lead); }
+ }
+ @media (min-width: 701px) and (max-width: 960px) and (prefers-reduced-motion: no-preference) {
+   .lifecycle[data-motion="desktop"] .lifecycle__track { height: 175svh; }
+@@ -189,14 +194,14 @@
+   .lifecycle { --relation-0: 1 !important; --relation-1: 1 !important; --relation-2: 1 !important; }
+   .lifecycle .lifecycle__story-stage { position: relative; top: auto; }
+   .lifecycle .lifecycle__track { height: auto; }
+-  .lifecycle .lifecycle__closing { color: #202124; font-weight: 400; }
++  .lifecycle .lifecycle__closing { color: var(--type-section); font-weight: 400; }
+ }
+ 
+ /* Chapter release space belongs to sections, never empty spacer elements. */
+-.hero { margin-bottom: 18svh; }
++.hero { margin-bottom: 24svh; }
+ .carriers {
+   min-height: 100svh;
+-  margin-top: 10svh;
++  margin-top: 20svh;
+   padding-block: 10svh;
+   grid-template-rows: auto 1fr;
+   grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+@@ -204,9 +209,9 @@
+   align-content: stretch;
+ }
+ @media (min-width: 701px) and (max-width: 960px) {
+-  .hero { margin-bottom: 12svh; }
++  .hero { margin-bottom: 16svh; }
+   .carriers {
+-    margin-top: 8svh;
++    margin-top: 14svh;
+     padding-block: 8svh;
+     grid-template-columns: minmax(0, 1fr);
+     grid-template-rows: auto auto auto;
+@@ -216,9 +221,9 @@
+   .carriers__media { width: 94%; }
+ }
+ @media (max-width: 700px) {
+-  .hero { margin-bottom: 10svh; }
++  .hero { margin-bottom: 12svh; }
+   .carriers {
+-    margin-top: 6svh;
++    margin-top: 10svh;
+     padding-block: 6svh;
+     grid-template-columns: minmax(0, 1fr);
+     grid-template-rows: auto auto auto;
+@@ -235,7 +240,7 @@
+ /* Reveal the unchanged full-size field. No product zoom or per-frame layout. */
+ @media (prefers-reduced-motion: no-preference) {
+   .lifecycle[data-motion] .lifecycle__canvas {
+-    clip-path: inset(calc((1 - var(--entry)) * var(--entry-y)) calc((1 - var(--entry)) * var(--entry-x)));
++    clip-path: inset(calc((1 - var(--entry)) * var(--entry-y)) calc((1 - var(--entry)) * var(--entry-x)) round calc((1 - var(--entry)) * var(--entry-radius)));
+   }
+   .lifecycle[data-motion="desktop"] .lifecycle__intro {
+     transform: translateY(calc((1 - var(--entry)) * 2svh));
+@@ -245,3 +250,29 @@
+   }
+   .lifecycle[data-motion="mobile"] { --entry-x: 3%; --entry-y: 2%; }
+ }
++
++/* One Desktop width/radius authority, also accounting for the 1600px cap. */
++@media (min-width: 961px) {
++  .lifecycle { --entry-x: var(--story-inset); --entry-radius: var(--story-radius); }
++  .lifecycle__intro, .lifecycle__resolution { left: max(6%, calc(var(--story-inset) + 32px)); }
++  .lifecycle__context--production { left: max(6%, calc(var(--story-inset) + 32px)); }
++  .lifecycle__context--service { left: max(11%, calc(var(--story-inset) + 64px)); }
++  .lifecycle__context[data-emphasis="future"] h3 { color: var(--type-lead); }
++  .lifecycle__context[data-emphasis="completed"] h3 { color: #414a40; }
++}
++
++/* Three processes, two carriers, one radio-identification route.
++   Spatial grouping only: no new public taxonomy or compatibility claim. */
++.carriers h2 { color: var(--type-section); }
++.carriers__routes { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 28px 20px; }
++.carriers__routes > div { grid-column: span 2; }
++.carriers__routes > div:nth-child(4), .carriers__routes > div:nth-child(5) { grid-column: span 3; }
++.carriers__routes > div:last-child { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 24px; }
++.carriers__routes > div:last-child dd { margin: 0; }
++.carriers__routes dt { font-size: 21px; }
++.carriers__routes-label { margin-bottom: 22px; }
++@media (max-width: 700px) {
++  .carriers__routes { gap: 26px 14px; }
++  .carriers__routes dt { font-size: 19px; }
++  .carriers__comma { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
++}
+--- a/docs/rebuild-audit/PRODUCT-DETAIL-DESIGN-RULES.md
++++ b/docs/rebuild-audit/PRODUCT-DETAIL-DESIGN-RULES.md
+@@ -55,6 +55,8 @@
+ 
+ Headings should create chapter rhythm and guide attention. They should not become verbose feature summaries.
+ 
++Product-detail typography must expose hierarchy through size, weight, tone and spacing together, not size or opacity alone. Use a small set of page-level roles for display, section heading, identity/eyebrow, lead, detail and secondary/scope copy. Preserve legibility over the actual media: photo-backed roles may require denser tones than white-surface roles. Compare headline/lead, local heading/detail and detail/scope in rendered screenshots before accepting the hierarchy.
++
+ Responsive visual line breaks must preserve:
+ 
+ - one semantic heading
+@@ -78,11 +80,15 @@
+ 
+ Full-bleed immersive chapters may intentionally occupy the full viewport with open edges. A major change from a framed chapter to full-bleed media should have a deliberate spatial handoff rather than an abrupt scale jump. Any entry motion should be brief, preserve the established story motion, avoid per-frame layout changes, and collapse to complete static content for reduced-motion and no-JS.
+ 
++Repeated chapters may share an entry-frame language when one intentionally transforms out of it. Use one width and corner authority for the shared entry; spatial continuity does not require identical final containers. Validate matching visible edges and radius at entry, and the intended open edges after expansion.
++
+ Use the space to compose media, headings and narrative content, rather than adding empty padding. Tablet major chapters should retain comparable visual authority. Mobile may use an optically smaller sticky stage so surrounding content and browser chrome remain usable; ordinary content chapters use a minimum height and must grow with their content. Viewport-sized storytelling never authorizes clipped content or trapped scrolling.
+ 
+ Chapter-to-chapter whitespace is narrative rhythm, not leftover space. Give a major chapter a perceptible ending and the next a deliberate entry through section spacing, alignment or background transitions. Choose the actual spacing through full-page and transition viewport QA, not a universal fixed gap or blank spacer elements. Reduced-motion and no-JS modes must keep complete content without retaining a long motion-only rail.
+ 
+-Promoted by the Product Owner's Phase 2D-A7-B P05/P06 direction and Chrome viewport/transition validation; numeric choices in the Tusky prototype remain product-specific examples. Local HTTP interaction is the motion authority; GitHub source browsing and remote screenshots are static review, supplemented by short recorded motion evidence when the motion changes.
++Major product-story chapters must not feel attached or mechanically stacked. Measure the previous visible media edge to the next visible chapter start, including any inset or internal entry space, and inspect both together in real viewport screenshots. CSS spacing tokens alone do not establish acceptance; the pause must be visible without producing excessive dead space.
++
++Promoted by the Product Owner's Phase 2D-A7-B P05/P06/P07 direction and Chrome viewport/transition validation; numeric choices in the Tusky prototype remain product-specific examples. Local HTTP interaction is the motion authority; GitHub source browsing and remote screenshots are static review, supplemented by short recorded motion evidence when the motion changes.
+ 
+ Do not default to:
+ 

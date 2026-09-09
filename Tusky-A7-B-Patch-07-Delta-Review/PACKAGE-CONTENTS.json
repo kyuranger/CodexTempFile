@@ -1,0 +1,287 @@
+[
+  {
+    "path": "README.md",
+    "bytes": 934,
+    "sha256": "7095d93debf39c6548501c8b46982fda990bd1ad82763b6b2b16285a2db19d34"
+  },
+  {
+    "path": "Phase-2D-A7-B-Patch-07.md",
+    "bytes": 8757,
+    "sha256": "b56c4b5bb48b594f44ada8f5cc0ba0073e56382886f9e2571ddfd4cee220e5b4"
+  },
+  {
+    "path": "REVIEW-MANIFEST.md",
+    "bytes": 2111,
+    "sha256": "be398f633d71cdd25baa0adaf2ada48906d05637dc520610bd9242fe28c51c0f"
+  },
+  {
+    "path": "START-HERE.html",
+    "bytes": 18482,
+    "sha256": "b4e02b613b169eff352a62cb0977857f4142c83f54f638e181582f36ca71821c"
+  },
+  {
+    "path": "source/index.html",
+    "bytes": 19558,
+    "sha256": "9b599a93ac37b6866b09b042d3b6979869cc0ec8662914f2ab53ec8ff63c2354"
+  },
+  {
+    "path": "source/assets/tusky_phoenix_lifecycle.css",
+    "bytes": 14051,
+    "sha256": "54f6455d93b58016a3615e45990a97ccd1dfc6763cf370b0f447a3466355be57"
+  },
+  {
+    "path": "source/assets/tusky_phoenix_lifecycle.js",
+    "bytes": 5868,
+    "sha256": "4260aa9615e060ff90a4c5c9b6deed971003b519b5406284f3b261dc1aab29f6"
+  },
+  {
+    "path": "media-integration/patch-07/validation.json",
+    "bytes": 919068,
+    "sha256": "c6b435b04c3abf713273e28d7f93b32c04b577b8b937fc85ebe99db187bb2a33"
+  },
+  {
+    "path": "media-integration/patch-07/integrity.json",
+    "bytes": 4198,
+    "sha256": "d51dc6a8a6d0c914917f65c993715915b061ef8f41c7b2f9e5ee2813777c94d7"
+  },
+  {
+    "path": "media-integration/patch-07/changes.patch",
+    "bytes": 21612,
+    "sha256": "72249720f3590a0dc671e2efb857c07636e2f4db33cbc175c3b72f3aa14b5c87"
+  },
+  {
+    "path": "media-integration/patch-07/motion-evidence.json",
+    "bytes": 2472,
+    "sha256": "6f864d17b82b1812108779d1e4229795e544c59b7e36da26d555f56dada78849"
+  },
+  {
+    "path": "media-integration/patch-07/page-rhythm-map.svg",
+    "bytes": 1929,
+    "sha256": "3067b290b0cfcd4727c3e3bd7d57da514cf8aeb1bad6c1c0a402f1bed026ab39"
+  },
+  {
+    "path": "media-integration/patch-07/contrast-samples.json",
+    "bytes": 5643,
+    "sha256": "2be08dfd7a90b29aa6b37034ae801c863e7a8c8219ac344e539da7f9f3c55c64"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-hero-opening.webp",
+    "bytes": 62718,
+    "sha256": "4800f4fe28250746a584aabe16b1a4b5ba0167ad7917c4489bafa9fe4ff49aaa"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-hero-c2-handoff.webp",
+    "bytes": 44416,
+    "sha256": "0ca11c2634f35b96f69c97e6cfa12470994ba79288204ad0ef85383a591075a6"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-900-entry.webp",
+    "bytes": 46054,
+    "sha256": "dc1d3214336ee381aaf9a5e8cdaf8fa0a09884fa7dd56c11a4daa83d53bf266d"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-900-expansion-mid.webp",
+    "bytes": 49504,
+    "sha256": "8b30d9ce66f133b7c43c1d89580fdfa2d38dd692691cf29a463529bac7368a81"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-900-immersive.webp",
+    "bytes": 52180,
+    "sha256": "ba629f8d10b35e45cd7e239d961abcdd925a8ee74ce7b7bfddc1601f1962b00f"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-900-relation-mid.webp",
+    "bytes": 53286,
+    "sha256": "dab6f179650c48f4ae55982a4ac4ad5b83381e538969e7eb0f43a2548bc99168"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-900-final.webp",
+    "bytes": 55214,
+    "sha256": "1659007c401ac6f2fc6a59ff472f00f7c5b93286d520d52375d068353e26f714"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-c2-c3-release.webp",
+    "bytes": 62688,
+    "sha256": "c4c2aa3fb78d803e8e9302eac7c7ac0dff368f43dd56843ee29ea67d8cdeea64"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-c3-whole.webp",
+    "bytes": 77038,
+    "sha256": "58dc1d512046db83ceeb6d77320105381b65e7f3a557b8694e3e3350b274a343"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-c3-entry.webp",
+    "bytes": 77160,
+    "sha256": "21dd2d4997681e8e99a386d989e91686ec03fad25dae5227749d3e318486edd3"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-p06-c2-type.webp",
+    "bytes": 61020,
+    "sha256": "d28e961d17bf5db1ebb4628b12a9654ccd35b69eec75dad9b116f8d145877012"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-p06-c3-type.webp",
+    "bytes": 77572,
+    "sha256": "9ed5abc858d83966754f233a3fb24e660c51406f21828426073346beaa39b412"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-overview-native.webp",
+    "bytes": 191860,
+    "sha256": "58439cb174b3415529164a12ccab339390ddf73126287cc467712a6f30e78e31"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-overview-static.webp",
+    "bytes": 202330,
+    "sha256": "ae8a8ee9e83ed146f8b837fe74fe9bb15213f0be699433bdd585e0ab498e3a75"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1024-hero-opening.webp",
+    "bytes": 46910,
+    "sha256": "202a6cd091c06550e7e400fd10280ccdff42b3d1fcbcc367f7a79dffb86476bd"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1024-c2-c3-release.webp",
+    "bytes": 46778,
+    "sha256": "b18f50105eda1802aef01c04a4f3a6931e3faaee1b066743c68197e45d7d7557"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1024-c3-whole.webp",
+    "bytes": 56146,
+    "sha256": "2cca6055a1aa8faf3d73f475ba52aa18656ae1133af40a397d3b357f3603c90f"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1024-c3-entry.webp",
+    "bytes": 56462,
+    "sha256": "16b1ca3f4f2b46ccb0a808c9906c758b8436eefde046b51d8a042941968e0c45"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/820-1180-entry.webp",
+    "bytes": 36888,
+    "sha256": "4634b9dd674a251f53f4b22baa74728b2482421e6e21a6294905311552765feb"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/820-1180-final.webp",
+    "bytes": 41194,
+    "sha256": "85a77a5add4e6b0770fc4b66b16525fce6e94df81e3312d3d889c7e496e205a3"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/820-c2-c3-release.webp",
+    "bytes": 57272,
+    "sha256": "29fd467a66f5fef73810f723f997e9f55fc47286c6d0cafdde8b1c3aad2ae998"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/820-c3-whole.webp",
+    "bytes": 68610,
+    "sha256": "5265ab6ec9313d2f833282c441d8b89be1fb893c464b975bb1c2d876f1f38c1b"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/820-c3-entry.webp",
+    "bytes": 64100,
+    "sha256": "8d114484b32613ccec021ed1a1a02f766774c599a576df51cd363328037be3d3"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/820-overview-native.webp",
+    "bytes": 146336,
+    "sha256": "c0ce4bced41aee179590b540160014729b93276dfabf4c0399ee998d0f8f884e"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/820-overview-static.webp",
+    "bytes": 151636,
+    "sha256": "1c6bf82521135d19099a84947e6e0e5eec05888a0b72f4e596cb96ee3f79848f"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/390-hero-opening.webp",
+    "bytes": 24148,
+    "sha256": "04292e72d3c672ede153be0a4dde378f790de6c762caa39c030b08a8d09d831b"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/390-844-entry.webp",
+    "bytes": 27538,
+    "sha256": "b7a4382c915d5a13473a96413af54bea916037b12630a11253b3592e07860380"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/390-844-relation-mid.webp",
+    "bytes": 29480,
+    "sha256": "28464994fd3586949c116c00a94309d70b7f564b1cf99703ce773c1981bbc583"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/390-844-final.webp",
+    "bytes": 30566,
+    "sha256": "efe636cc4e9982c872531b339cc2e92b2376f64de155e04d793cca4683029ed4"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/390-c2-c3-release.webp",
+    "bytes": 41624,
+    "sha256": "e7703782af7fb938a3b44cb87db016d4e9b341656f79713bd3b2f86ee4e5a199"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/390-c3-whole.webp",
+    "bytes": 38464,
+    "sha256": "83a3daa82ad8d0469b3bf9788e107d529b40a725852e6bb12f790b4bd49b0bac"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/390-c3-entry.webp",
+    "bytes": 36508,
+    "sha256": "1d76b16930f611273132e8ba162b37127ffea1359435334d2f4d165cf1f43714"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/390-overview-native.webp",
+    "bytes": 90556,
+    "sha256": "a4298c851acd56aa8a487c9bb53feca69603345fb3eab15c2f4bc2623a95bdf7"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/390-overview-static.webp",
+    "bytes": 93954,
+    "sha256": "5b8f8ed00cad598af45343d1c953ad3614ec03580f5907d38b49ef541db4a28c"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/320-740-entry.webp",
+    "bytes": 24840,
+    "sha256": "a90c10e8af7061c7fe0b85610aaff27e3231164b63198dfdffa319b213baa8e5"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/320-740-final.webp",
+    "bytes": 26254,
+    "sha256": "8969aac37ce021f3d2ee4ed019a3f3890f7324011db9d5192e6d2009e0e635dc"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/430-932-relation-mid.webp",
+    "bytes": 30660,
+    "sha256": "0cc45c67f77c466a6188573dfeb9405ed4bb901c867df1744dc12d54855a917f"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-699-immersive.webp",
+    "bytes": 59058,
+    "sha256": "20df8ebc40bcaf2e00e13cd25b531ca0075091c2bd48872920b17d5db92ca8c6"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/1440-650-immersive.webp",
+    "bytes": 59434,
+    "sha256": "6f219a597d3ba29849988a43840e050c00a0dbbb1ff6bfdaedc0fec7b82b2d77"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/390-reduced.webp",
+    "bytes": 30220,
+    "sha256": "a9e8237d6af987f6fed78f6c48b3d79684eadf21e69b8b823da19ecf23f7b1da"
+  },
+  {
+    "path": "media-integration/patch-07/screenshots/320-no-js.webp",
+    "bytes": 25662,
+    "sha256": "eca2e924db12777ba3979718500c3c10762ec7c734db7edf71eda7a292a5144c"
+  },
+  {
+    "path": "media-integration/patch-07/motion/desktop-handoff.webm",
+    "bytes": 233345,
+    "sha256": "888cacabe3a3d45ed5bd5b802fed6f231d5b8bb61af0bd94984ea2b8c9633f47"
+  },
+  {
+    "path": "media-integration/patch-07/motion/mobile-handoff.webm",
+    "bytes": 91436,
+    "sha256": "f4674f1094fa99164b5b6142eda1aa99181e8b403e1d5f760370790594f574bc"
+  },
+  {
+    "path": "media-integration/patch-07/delivery-validation.json",
+    "bytes": 15616,
+    "sha256": "abb11b7fe023a03da59c5f7e3aeb7e3d5fe7cc659e8d6f7e26ca10b368d7f239"
+  }
+]

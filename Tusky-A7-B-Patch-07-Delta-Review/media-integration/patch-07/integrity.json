@@ -1,0 +1,106 @@
+{
+  "baseline": "P06 working tree captured before P07",
+  "source": [
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/index.html",
+      "bytes": 19558,
+      "sha256": "9b599a93ac37b6866b09b042d3b6979869cc0ec8662914f2ab53ec8ff63c2354"
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css",
+      "bytes": 14051,
+      "sha256": "54f6455d93b58016a3615e45990a97ccd1dfc6763cf370b0f447a3466355be57"
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.js",
+      "bytes": 5868,
+      "sha256": "4260aa9615e060ff90a4c5c9b6deed971003b519b5406284f3b261dc1aab29f6"
+    },
+    {
+      "path": "docs/rebuild-audit/PRODUCT-DETAIL-DESIGN-RULES.md",
+      "bytes": 13150,
+      "sha256": "509fb3cd2599012565ccd42824fea30bf2a5e9c4e7464ee2e1c832098db987e8"
+    }
+  ],
+  "unchangedAssetsAndFonts": [
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_alternative_carriers_scene.png",
+      "bytes": 1739159,
+      "sha256": "1632315557a1345bf55d6208bad116d9d39409ead48f726e2c2cb87b3e356cf4",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_lifecycle_scene_desktop.png",
+      "bytes": 1413564,
+      "sha256": "32c71981fff2b57a4bdde1d102fb000fd942a53a31fd4ee8370342d075ad9082",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_lifecycle_scene_mobile.png",
+      "bytes": 1475577,
+      "sha256": "ff3b8c221ccc3eb7c33fbcc1a7070ca7aaec2394eb15de02a3834311b2596616",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_alternative_carriers.png",
+      "bytes": 1739159,
+      "sha256": "1632315557a1345bf55d6208bad116d9d39409ead48f726e2c2cb87b3e356cf4",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_alternative_carriers.webp",
+      "bytes": 93466,
+      "sha256": "2d54d2d27b8704eb9addd6a7d502188095dae9f92498a16ea9f179f8fa9c1e1a",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_hero_approved.png",
+      "bytes": 1539488,
+      "sha256": "7c6536185fe82c088c6572e80f34f4848219cd418fde094dcc299a7e03e69a6f",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle_desktop.png",
+      "bytes": 1413564,
+      "sha256": "32c71981fff2b57a4bdde1d102fb000fd942a53a31fd4ee8370342d075ad9082",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle_desktop.webp",
+      "bytes": 48948,
+      "sha256": "7d876f49ca86724bc6a128a69072624dd9bfaee900d1d84e0aebd96611262308",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle_mobile.png",
+      "bytes": 1475577,
+      "sha256": "ff3b8c221ccc3eb7c33fbcc1a7070ca7aaec2394eb15de02a3834311b2596616",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle_mobile.webp",
+      "bytes": 57894,
+      "sha256": "75740b572be3f32224fa71ae5695e8e36ea6712aad9ddf8c9c9024e2c4b90800",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/fonts/noto-sans-sc-hero.woff2",
+      "bytes": 16928,
+      "sha256": "1e4a449a60fde4b2561fb6d8ddec653fe46b0f6c40a5b2fd4b89e3210eeb312b",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/fonts/noto-sans-sc-lifecycle.woff2",
+      "bytes": 17324,
+      "sha256": "505c4a232cd46ab6b6ba96b70ea5afea6017c510af92524a199fef7bbe442e5f",
+      "matchesHEAD": true
+    },
+    {
+      "path": "prototypes/phase-2d-a5-3/tusky_phoenix/assets/fonts/OFL.txt",
+      "bytes": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "matchesHEAD": true
+    }
+  ],
+  "relationshipJavaScriptUnchanged": true
+}

@@ -1,4 +1,4 @@
-// A7-B P05. Preserve the accepted native-scroll relationship choreography.
+// A7-B P06. Add an early field reveal; preserve accepted relationship progress.
 const chapter = document.querySelector('.lifecycle');
 if (chapter) {
   const track = chapter.querySelector('.lifecycle__track');
@@ -44,6 +44,8 @@ if (chapter) {
     const stageHeight = scene.getBoundingClientRect().height;
     const stickyTop = parseFloat(getComputedStyle(scene).top) || 0;
     const progress = clamp((stickyTop - bounds.top) / Math.max(1, bounds.height - stageHeight));
+    const entry = clamp(progress / .14);
+    chapter.style.setProperty('--entry', (entry * entry * (3 - 2 * entry)).toFixed(4));
     const current = progress < .34 ? 0 : progress < .67 ? 1 : 2;
     chapter.dataset.resolved = String(progress >= .93);
     ranges.forEach(([from, to], index) => {
@@ -80,6 +82,7 @@ if (chapter) {
     if (!pinning) {
       delete chapter.dataset.motion;
       delete chapter.dataset.resolved;
+      chapter.style.removeProperty('--entry');
       chapter.dataset.runtime = 'static';
       chapter.dataset.fallback = reduced.matches ? 'reduced-motion' : capable ? 'layout' : 'sticky-unsupported';
       contexts.forEach((context, index) => {

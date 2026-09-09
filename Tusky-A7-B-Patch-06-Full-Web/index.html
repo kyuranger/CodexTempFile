@@ -73,7 +73,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: calc(100svh - 92px);
+      height: calc(100svh - 124px);
       min-height: 500px;
       padding-bottom: 2rem;
       overflow: hidden;
@@ -177,7 +177,7 @@
       }
 
       .hero-frame {
-        height: calc(100svh - 88px);
+        height: calc(100svh - 120px);
         min-height: 500px;
         border-radius: 22px;
       }
@@ -487,6 +487,7 @@
       delete chapter.dataset.resolved;
       chapter.dataset.runtime = 'error';
       chapter.dataset.fallback = 'module-error';
+      chapter.style.removeProperty('--entry');
       [0, 1, 2].forEach(i => chapter.style.removeProperty(`--relation-${i}`));
       chapter.querySelectorAll('.lifecycle__context').forEach(context => {
         delete context.dataset.emphasis;
@@ -532,9 +533,10 @@
         </ul>
       </div>
     </section>
-    <section class="lifecycle" id="product-lifecycle" aria-labelledby="lifecycle-heading" data-phase="phase-2d-a7-b-p05" data-runtime="uninitialized" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-claim-status="SOURCE_SUPPORTED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE">
+    <section class="lifecycle" id="product-lifecycle" aria-labelledby="lifecycle-heading" data-phase="phase-2d-a7-b-p06" data-runtime="uninitialized" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-claim-status="SOURCE_SUPPORTED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE">
       <div class="lifecycle__track">
         <div class="lifecycle__story-stage">
+          <div class="lifecycle__canvas">
           <header class="lifecycle__intro">
             <p class="lifecycle__eyebrow">产品生命周期</p>
             <h2 id="lifecycle-heading"><span>同一个码<span class="lifecycle__comma">，</span></span><span>关联不同阶段</span></h2>
@@ -575,6 +577,7 @@
           <div class="lifecycle__resolution">
             <p class="lifecycle__closing">查找一件产品时，生产批次、流转记录与保修信息有共同的线索。</p>
             <p class="lifecycle__scope">结合业务应用，确认关联范围与接入方式。</p>
+          </div>
           </div>
         </div>
       </div>

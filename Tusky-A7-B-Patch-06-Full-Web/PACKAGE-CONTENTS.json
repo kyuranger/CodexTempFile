@@ -1,8 +1,8 @@
 [
   {
     "path": "index.html",
-    "bytes": 18895,
-    "sha256": "232680bda4238784f711883a1938f62ce1ecf64fe01b46d0e788dad7de91c63f"
+    "bytes": 19006,
+    "sha256": "2d19e4f132ffff0d2dffe90b8cff37215798907455518597d06550d48f0f114e"
   },
   {
     "path": "assets/fonts/noto-sans-sc-hero.woff2",
@@ -18,21 +18,6 @@
     "path": "assets/fonts/OFL.txt",
     "bytes": 4388,
     "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
-  },
-  {
-    "path": "assets/tusky_alternative_carriers_scene.png",
-    "bytes": 1739159,
-    "sha256": "1632315557a1345bf55d6208bad116d9d39409ead48f726e2c2cb87b3e356cf4"
-  },
-  {
-    "path": "assets/tusky_lifecycle_scene_desktop.png",
-    "bytes": 1413564,
-    "sha256": "32c71981fff2b57a4bdde1d102fb000fd942a53a31fd4ee8370342d075ad9082"
-  },
-  {
-    "path": "assets/tusky_lifecycle_scene_mobile.png",
-    "bytes": 1475577,
-    "sha256": "ff3b8c221ccc3eb7c33fbcc1a7070ca7aaec2394eb15de02a3834311b2596616"
   },
   {
     "path": "assets/tusky_phoenix_alternative_carriers.png",
@@ -51,13 +36,13 @@
   },
   {
     "path": "assets/tusky_phoenix_lifecycle.css",
-    "bytes": 11271,
-    "sha256": "9de8e79f9a1c7accaea57082eb3cc9c5a7d02007553b20751ea9d51923ced3e8"
+    "bytes": 11972,
+    "sha256": "92a20a1e05471a4c15ec822ae6e2bcd3dd3678ad41eb0887177da23c7f0e4630"
   },
   {
     "path": "assets/tusky_phoenix_lifecycle.js",
-    "bytes": 5684,
-    "sha256": "51cf564e9f24ee82c07fd79c4a40b42561fcf87cf54889498f359b50a87640ff"
+    "bytes": 5868,
+    "sha256": "4260aa9615e060ff90a4c5c9b6deed971003b519b5406284f3b261dc1aab29f6"
   },
   {
     "path": "assets/tusky_phoenix_lifecycle_desktop.png",
@@ -81,12 +66,12 @@
   },
   {
     "path": "preview.py",
-    "bytes": 696,
-    "sha256": "52f63fec011e020c4f4288f284e744eec4a5cd3dc1f603e7a7f9c0b7a9e6faf0"
+    "bytes": 683,
+    "sha256": "fd35b8ced70c437611e3348cde57e4dfe0eb36a2731a783aca9227e567ec03d2"
   },
   {
     "path": "README.md",
-    "bytes": 1502,
-    "sha256": "3511ce352e7ed27426cfd2cba3bc1ebf6376ca6762b0e3628a1c767368992b5b"
+    "bytes": 1555,
+    "sha256": "f2d9faac097ad4824a10b00c9cc5d6adfaf8bcb7e81b29404ff65e1852635f22"
   }
 ]

@@ -1,0 +1,298 @@
+diff --git a/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css b/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css
+index fe55e7b..613ed5d 100644
+--- a/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css
++++ b/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.css
+@@ -1,4 +1,4 @@
+-/* A7-B Patch 02. Open relationship field and asymmetric editorial chapter. */
++/* A7-B Patch 03. Immersive C2 canvas; C3 retains the existing P02 layout. */
+ @font-face {
+   font-family: "Tusky Lifecycle";
+   font-style: normal;
+@@ -70,17 +70,7 @@
+ }
+ .lifecycle__connections--compact { display: none; }
+ .lifecycle__origin { fill: var(--trace-ink); stroke: none; }
+-.lifecycle__guide {
+-  stroke: #aaa298;
+-  stroke-width: .9;
+-  stroke-dasharray: .2 .58 .1 .12;
+-}
+-.lifecycle__connection, .lifecycle__thread, .lifecycle__branch {
+-  stroke-dasharray: 1;
+-}
+-.lifecycle__connection { stroke-dashoffset: calc(1 - var(--relation)); }
+-.lifecycle__thread { stroke-dashoffset: calc(1 - clamp(0, var(--relation) / .45, 1)); }
+-.lifecycle__branch { stroke-dashoffset: calc(1 - clamp(0, (var(--relation) - .45) / .55, 1)); }
++.lifecycle__connection { stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--relation)); }
+ .lifecycle [data-relation="0"] { --relation: var(--relation-0); }
+ .lifecycle [data-relation="1"] { --relation: var(--relation-1); }
+ .lifecycle [data-relation="2"] { --relation: var(--relation-2); }
+@@ -95,11 +85,6 @@
+ .lifecycle__resolution { max-width: 1080px; margin: 28px 3.5% 0; }
+ .lifecycle__closing { max-width: 39em; margin: 0; color: #373b35; font-size: 21px; font-weight: 350; line-height: 1.7; text-wrap: pretty; }
+ .lifecycle__scope, .carriers__scope { margin: 12px 0 0; color: #60645c; font-size: 13px; line-height: 1.8; }
+-/* Measured scene/viewport geometry sets the centered sticky offset. */
+-@media (min-width: 961px) and (min-height: 820px) and (prefers-reduced-motion: no-preference) {
+-  .lifecycle[data-motion="desktop"] .lifecycle__track::after { content: ""; display: block; height: clamp(560px, 74vh, 740px); }
+-  .lifecycle[data-motion="desktop"] .lifecycle__scene { position: sticky; top: var(--story-top, 0px); }
+-}
+ .carriers {
+   display: grid;
+   grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+@@ -181,8 +166,69 @@
+   .lifecycle__context p { font-size: 12px; }
+   .carriers__media { width: calc(100% + 24px); margin-inline: -12px; }
+ }
++/* C2 canvas override: full bleed without changing the C3 content measure. */
++.lifecycle { width: 100%; max-width: none; }
++.lifecycle__intro, .lifecycle__resolution { padding-inline: clamp(24px, 6vw, 112px); }
++.lifecycle__resolution { margin-inline: 0; }
++.lifecycle__scene { height: 100vh; }
++.lifecycle__photo { position: absolute; inset: 0; }
++.lifecycle__photo img { height: 100%; object-fit: cover; object-position: 70% 50%; }
++.lifecycle__identity { left: 55%; top: 82%; width: 17%; }
++.lifecycle__context--production { left: 7%; top: 17%; }
++.lifecycle__context--distribution { left: 24%; top: 39%; }
++.lifecycle__context--service { left: 12%; top: 64%; }
++.lifecycle__connections { stroke-width: 1.1; }
++.lifecycle h2 .lifecycle__comma { display: inline; }
++@media (min-width: 701px) and (prefers-reduced-motion: no-preference) {
++  .lifecycle[data-motion="desktop"] .lifecycle__track { height: 180vh; }
++  .lifecycle[data-motion="desktop"] .lifecycle__scene { position: sticky; top: 0; }
++}
++@media (min-width: 701px) and (max-width: 960px) {
++  .lifecycle__scene { height: 72svh; }
++  .lifecycle[data-motion="desktop"] .lifecycle__track { height: 145svh; }
++}
++@media (max-width: 700px) {
++  .lifecycle { --stage-height: 86svh; }
++  .lifecycle__intro, .lifecycle__resolution { padding-inline: 24px; }
++  .lifecycle__resolution { margin-inline: 0; }
++  /* The punctuation remains in the single accessible heading source. */
++  .lifecycle h2 .lifecycle__comma {
++    display: inline-block; position: absolute; width: 1px; height: 1px;
++    padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
++  }
++  .lifecycle__scene { height: auto; aspect-ratio: 1122 / 1402; }
++  .lifecycle__photo img { object-position: 50% 50%; }
++  .lifecycle__connections { stroke-width: 1.65; }
++  .lifecycle__identity { left: 6%; top: auto; bottom: 6%; width: 40%; }
++  .lifecycle__anchor-label { font-size: 10px; }
++  .lifecycle__anchor-caption { font-size: 15px; }
++  .lifecycle__context { left: 6%; width: 39%; }
++  .lifecycle__context--production { top: 17%; }
++  .lifecycle__context--distribution { top: 37%; }
++  .lifecycle__context--service { top: 57%; }
++  .lifecycle__context h3 { font-size: 22px; }
++  .lifecycle__context p { margin-top: 6px; font-size: 12px; line-height: 1.65; }
++}
++@media (max-width: 700px) and (prefers-reduced-motion: no-preference) {
++  .lifecycle[data-motion="mobile"] .lifecycle__track { height: 210svh; }
++  .lifecycle[data-motion="mobile"] .lifecycle__scene {
++    position: sticky; top: 7svh; height: var(--stage-height); aspect-ratio: auto;
++  }
++  .lifecycle[data-motion="mobile"] .lifecycle__context { color: #4b4d46; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context h3 { font-size: 17px; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context p { color: #4b4d46; font-size: 12px; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="current"] { color: #202124; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="current"] h3 { font-size: 30px; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="current"] p { color: #30322e; font-size: 14px; }
++  .lifecycle[data-motion="mobile"] .lifecycle__context[data-emphasis="completed"] h3 { color: #3e403a; }
++}
++@media (max-width: 359px) {
++  .lifecycle__intro, .lifecycle__resolution { padding-inline: 20px; }
++  .lifecycle__context h3 { font-size: 20px; }
++  .lifecycle__context p { font-size: 11px; margin-top: 4px; }
++}
+ @media (prefers-reduced-motion: reduce), print {
+   .lifecycle { --relation-0: 1 !important; --relation-1: 1 !important; --relation-2: 1 !important; }
+   .lifecycle .lifecycle__scene { position: relative; top: auto; }
+-  .lifecycle .lifecycle__track::after { display: none; }
++  .lifecycle .lifecycle__track { height: auto; }
+ }
+diff --git a/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.js b/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.js
+index bf04d9e..d2a7498 100644
+--- a/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.js
++++ b/prototypes/phase-2d-a5-3/tusky_phoenix/assets/tusky_phoenix_lifecycle.js
+@@ -1,45 +1,52 @@
+-// A7-B P02. Preserve the accumulating trace inside a centered open field.
++// A7-B P03. Native scrolling reveals three relations in one persistent canvas.
+ const chapter = document.querySelector('.lifecycle');
+ if (chapter) {
+   const track = chapter.querySelector('.lifecycle__track');
+   const scene = chapter.querySelector('.lifecycle__scene');
+-  const lastHeading = chapter.querySelector('.lifecycle__context--service h3');
+-  const masthead = document.querySelector('.masthead');
++  const contexts = [...chapter.querySelectorAll('.lifecycle__context')];
+   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+-  const desktop = matchMedia('(min-width: 961px) and (min-height: 820px)');
+   const narrow = matchMedia('(max-width: 700px)');
+-  const ranges = [[0, .38], [.30, .71], [.65, 1]];
++  const ranges = [[0, .27], [.34, .60], [.67, .93]];
+   const clamp = value => Math.max(0, Math.min(1, value));
+   let frame = 0;
+   let inView = true;
+   let listening = false;
+ 
++  function geometry() {
++    const { width, height } = scene.getBoundingClientRect();
++    const mobile = narrow.matches;
++    const [sourceWidth, sourceHeight, qrX, qrY, position] = mobile
++      ? [1122, 1402, 696, 976, .5] : [1877, 838, 1390, 612, .7];
++    const scale = Math.max(width / sourceWidth, height / sourceHeight);
++    // Map the unchanged image's QR edge through object-fit: cover. The origin
++    // stays just outside the QR, including after orientation/viewport changes.
++    const x = ((width - sourceWidth * scale) * position + qrX * scale - 10) / width * 1000;
++    const y = ((height - sourceHeight * scale) / 2 + qrY * scale) / height * 1000;
++    const svg = chapter.querySelector(mobile ? '.lifecycle__connections--compact' : '.lifecycle__connections--wide');
++    const origin = svg.querySelector('.lifecycle__origin');
++    origin.setAttribute('cx', x.toFixed(2));
++    origin.setAttribute('cy', y.toFixed(2));
++    const ends = mobile ? [[445, 200], [445, 400], [445, 600]] : [[240, 210], [405, 430], [285, 680]];
++    svg.querySelectorAll('.lifecycle__connection').forEach((path, i) => {
++      const [endX, endY] = ends[i];
++      path.setAttribute('d', mobile
++        ? `M${x} ${y}H570Q500 ${y} 500 ${y - 70}V${endY + 30}Q500 ${endY} 470 ${endY}H${endX}`
++        : `M${x} ${y}H${Math.min(x - 24, 650)}C550 ${y} 550 ${endY} ${endX} ${endY}`);
++    });
++  }
+   function paint() {
+     frame = 0;
+     if (reduced.matches) return;
+-    // All readings precede writes. Natural track position remains measurable
+-    // while the desktop scene is pinned; mobile/tablet need no extra scroll rail.
+-    const trackBounds = track.getBoundingClientRect();
+-    const bounds = scene.getBoundingClientRect();
+-    const origin = chapter.querySelector(narrow.matches ? '.lifecycle__origin--compact' : '.lifecycle__origin--wide');
+-    const anchor = origin.getBoundingClientRect();
+-    const originOffset = anchor.top + anchor.height / 2 - bounds.top;
+-    // A normal-flow masthead has scrolled away before this scene pins.
+-    // Only a visible fixed/sticky masthead occupies the usable viewport.
+-    const headerPosition = masthead ? getComputedStyle(masthead).position : 'static';
+-    const topInset = /^(fixed|sticky)$/.test(headerPosition)
+-      ? Math.max(0, Math.min(innerHeight, masthead.getBoundingClientRect().bottom)) : 0;
+-    const stickyTop = topInset + Math.max(0, (innerHeight - topInset - bounds.height) / 2);
+-    const start = desktop.matches
+-      ? trackBounds.top - stickyTop
+-      : trackBounds.top + originOffset - innerHeight * .80;
+-    const end = desktop.matches
+-      ? trackBounds.bottom - bounds.height - stickyTop - 24
+-      : trackBounds.top + lastHeading.getBoundingClientRect().top - bounds.top - innerHeight * .42;
+-    const progress = clamp(-start / Math.max(1, end - start));
+-    if (desktop.matches) chapter.style.setProperty('--story-top', `${stickyTop}px`);
++    const bounds = track.getBoundingClientRect();
++    const stageHeight = scene.getBoundingClientRect().height;
++    const stickyTop = parseFloat(getComputedStyle(scene).top) || 0;
++    const progress = clamp((stickyTop - bounds.top) / Math.max(1, bounds.height - stageHeight));
++    const current = progress < .34 ? 0 : progress < .67 ? 1 : 2;
+     ranges.forEach(([from, to], index) => {
+       chapter.style.setProperty(`--relation-${index}`, clamp((progress - from) / (to - from)).toFixed(4));
++      contexts[index].dataset.emphasis = index === current ? 'current' : index < current ? 'completed' : 'future';
++      if (narrow.matches && index === current) contexts[index].setAttribute('aria-current', 'step');
++      else contexts[index].removeAttribute('aria-current');
+     });
+   }
+   function schedule() {
+@@ -50,25 +57,29 @@ if (chapter) {
+     frame = 0;
+     if (reduced.matches) {
+       delete chapter.dataset.motion;
+-      ranges.forEach((_, index) => chapter.style.removeProperty(`--relation-${index}`));
++      contexts.forEach((context, index) => {
++        chapter.style.removeProperty(`--relation-${index}`);
++        delete context.dataset.emphasis;
++        context.removeAttribute('aria-current');
++      });
+       if (listening) removeEventListener('scroll', schedule);
+       listening = false;
+-      return;
++    } else {
++      chapter.dataset.motion = narrow.matches ? 'mobile' : 'desktop';
++      if (!listening) addEventListener('scroll', schedule, { passive: true });
++      listening = true;
+     }
+-    chapter.dataset.motion = desktop.matches ? 'desktop' : 'flow';
+-    if (!listening) addEventListener('scroll', schedule, { passive: true });
+-    listening = true;
+-    paint();
++    geometry();
++    if (!reduced.matches) paint();
+   }
+   new IntersectionObserver(entries => {
+     inView = entries[0].isIntersecting;
+     if (inView) schedule();
+   }, { rootMargin: '160px 0px' }).observe(chapter);
+-  new ResizeObserver(schedule).observe(scene);
++  new ResizeObserver(() => { geometry(); schedule(); }).observe(scene);
+   reduced.addEventListener('change', configure);
+-  desktop.addEventListener('change', configure);
+   narrow.addEventListener('change', configure);
+-  addEventListener('resize', schedule, { passive: true });
++  addEventListener('resize', configure, { passive: true });
+   addEventListener('pageshow', configure);
+   document.fonts.ready.then(configure);
+   configure();
+diff --git a/prototypes/phase-2d-a5-3/tusky_phoenix/index.html b/prototypes/phase-2d-a5-3/tusky_phoenix/index.html
+index 5c85fe2..77e270d 100644
+--- a/prototypes/phase-2d-a5-3/tusky_phoenix/index.html
++++ b/prototypes/phase-2d-a5-3/tusky_phoenix/index.html
+@@ -516,11 +516,11 @@
+         </ul>
+       </div>
+     </section>
+-    <section class="lifecycle" id="product-lifecycle" aria-labelledby="lifecycle-heading" data-phase="phase-2d-a7-b-p02" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-claim-status="SOURCE_SUPPORTED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE">
++    <section class="lifecycle" id="product-lifecycle" aria-labelledby="lifecycle-heading" data-phase="phase-2d-a7-b-p03" data-copy-status="PROTOTYPE_COPY_NOT_APPROVED" data-claim-status="SOURCE_SUPPORTED" data-media-status="AI_GENERATED_REALISTIC_CONCEPT_MEDIA / NOT_ALLOWED_AS_EVIDENCE">
+       <div class="lifecycle__stage">
+         <header class="lifecycle__intro">
+           <p class="lifecycle__eyebrow">产品生命周期</p>
+-          <h2 id="lifecycle-heading"><span>同一个码，</span><span>关联不同阶段</span></h2>
++          <h2 id="lifecycle-heading"><span>同一个码<span class="lifecycle__comma">，</span></span><span>关联不同阶段</span></h2>
+           <p class="lifecycle__lead">凰牙以一物一码关联产品信息。围绕同一标识，可关联的信息包括生产批次、流转去向与保修信息。</p>
+         </header>
+         <div class="lifecycle__track">
+@@ -534,35 +534,17 @@
+                 <p class="lifecycle__anchor-label">产品上的码</p>
+                 <p class="lifecycle__anchor-caption">同一标识</p>
+               </div>
+-              <svg class="lifecycle__connections lifecycle__connections--wide" viewBox="0 0 1120 500" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+-              <path class="lifecycle__guide" pathLength="1" d="M672 305H648C564 305 572 89 392 89H200"/>
+-              <path class="lifecycle__guide" pathLength="1" d="M672 305H648C578 305 589 219 512 219H425"/>
+-              <path class="lifecycle__guide" pathLength="1" d="M672 305H648C541 305 555 379 405 379H278"/>
+-              <path class="lifecycle__connection" data-relation="0" pathLength="1" d="M672 305H648C564 305 572 89 392 89H200"/>
+-              <path class="lifecycle__connection" data-relation="1" pathLength="1" d="M672 305H648C578 305 589 219 512 219H425"/>
+-              <path class="lifecycle__connection" data-relation="2" pathLength="1" d="M672 305H648C541 305 555 379 405 379H278"/>
+-                <circle class="lifecycle__origin lifecycle__origin--wide" cx="672" cy="305" r="3"/>
++              <svg class="lifecycle__connections lifecycle__connections--wide" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
++                <path class="lifecycle__connection" data-relation="0" pathLength="1" d="M738 730H650C550 730 550 210 240 210"/>
++                <path class="lifecycle__connection" data-relation="1" pathLength="1" d="M738 730H650C550 730 550 430 405 430"/>
++                <path class="lifecycle__connection" data-relation="2" pathLength="1" d="M738 730H650C550 730 550 680 285 680"/>
++                <circle class="lifecycle__origin lifecycle__origin--wide" cx="738" cy="730" r="3"/>
+               </svg>
+-              <svg class="lifecycle__connections lifecycle__connections--compact" viewBox="0 0 360 450" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+-              <path class="lifecycle__guide" pathLength="1" d="M138 52C183 52 189 80 165 99C153 109 151 124 171 135"/>
+-              <path class="lifecycle__guide" pathLength="1" d="M171 135C165 134 145 120 110 120"/>
+-              <g data-relation="0">
+-                <path class="lifecycle__thread" pathLength="1" d="M138 52C183 52 189 80 165 99C153 109 151 124 171 135"/>
+-                <path class="lifecycle__branch" pathLength="1" d="M171 135C165 134 145 120 110 120"/>
+-              </g>
+-              <path class="lifecycle__guide" pathLength="1" d="M171 135C202 162 147 197 177 245"/>
+-              <path class="lifecycle__guide" pathLength="1" d="M177 245C166 252 145 236 110 236"/>
+-              <g data-relation="1">
+-                <path class="lifecycle__thread" pathLength="1" d="M171 135C202 162 147 197 177 245"/>
+-                <path class="lifecycle__branch" pathLength="1" d="M177 245C166 252 145 236 110 236"/>
+-              </g>
+-              <path class="lifecycle__guide" pathLength="1" d="M177 245C197 282 139 309 174 361"/>
+-              <path class="lifecycle__guide" pathLength="1" d="M174 361C164 369 145 352 110 352"/>
+-              <g data-relation="2">
+-                <path class="lifecycle__thread" pathLength="1" d="M177 245C197 282 139 309 174 361"/>
+-                <path class="lifecycle__branch" pathLength="1" d="M174 361C164 369 145 352 110 352"/>
+-              </g>
+-                <circle class="lifecycle__origin lifecycle__origin--compact" cx="138" cy="52" r="2.5"/>
++              <svg class="lifecycle__connections lifecycle__connections--compact" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
++                <path class="lifecycle__connection" data-relation="0" pathLength="1" d="M590 697H570Q500 697 500 627V230Q500 200 470 200H445"/>
++                <path class="lifecycle__connection" data-relation="1" pathLength="1" d="M590 697H570Q500 697 500 627V430Q500 400 470 400H445"/>
++                <path class="lifecycle__connection" data-relation="2" pathLength="1" d="M590 697H570Q500 697 500 627V630Q500 600 470 600H445"/>
++                <circle class="lifecycle__origin lifecycle__origin--compact" cx="590" cy="697" r="3"/>
+               </svg>
+               <ul class="lifecycle__contexts" aria-label="围绕同一产品标识的信息类别">
+                 <li class="lifecycle__context lifecycle__context--production" data-relation="0" data-claim-status="SOURCE_SUPPORTED" data-current-capability-status="NEEDS_VERIFICATION">

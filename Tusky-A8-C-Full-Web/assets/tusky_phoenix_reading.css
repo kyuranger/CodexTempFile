@@ -1,0 +1,92 @@
+/* A8-C: physical ribbon media hands attention to one semantic reading field. */
+@font-face {
+  font-family: "Tusky Reading";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/noto-sans-sc-reading.woff2") format("woff2");
+}
+.reading {
+  width: var(--story-width);
+  max-width: var(--story-max-width);
+  min-height: 100svh;
+  margin: 12svh auto 0;
+  padding: 10svh 0;
+  font-family: "Tusky Reading", "Noto Sans SC", sans-serif;
+  font-synthesis: none;
+  color: var(--type-section);
+}
+.reading__intro { padding-inline: clamp(8px, 3.3vw, 48px); }
+.reading__eyebrow { margin: 0 0 18px; color: var(--type-identity); font-size: 14px; line-height: 1.5; font-weight: 400; }
+.reading h2 { margin: 0; font-size: clamp(44px, 4.45vw, 64px); line-height: 1.25; font-weight: 350; }
+.reading h2 span { display: inline-block; }
+.reading__lead { margin: 22px 0 0; max-width: 37em; font-size: 17px; line-height: 1.85; font-weight: 400; color: var(--type-lead); text-wrap: pretty; }
+.reading__composition { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: clamp(36px, 4.4vw, 64px); align-items: start; margin-top: 64px; }
+.reading__media { margin: 36px 0 0; min-width: 0; }
+.reading__scene { position: relative; overflow: hidden; }
+.reading__scene img { display: block; width: 100%; height: auto; }
+/* Static screen matte removes baked-in AI status and verification claims.
+   This mask never reveals or animates into a result. */
+.reading__screen-mask { position: absolute; left: 74.75%; top: 57.1%; width: 19.65%; height: 15.5%; background: #f7f7f5; transform: skewY(-1deg); border-radius: 1.2% 1.2% 5% 5%; }
+.reading__media figcaption { margin-top: 14px; color: var(--type-secondary); font-size: 12px; line-height: 1.7; }
+.reading__field { min-width: 0; padding-right: clamp(8px, 2vw, 28px); }
+.reading__example { margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--type-identity); font-size: 13px; line-height: 1.6; }
+.reading__example span { color: var(--type-secondary); font-size: 12px; align-self: center; }
+.reading dl { margin: 0; }
+.reading dt { font-size: 13px; line-height: 1.65; font-weight: 400; color: var(--type-detail); }
+.reading dd { margin: 10px 0 0; font-weight: 350; line-height: 1.3; }
+.reading__product dd { font-size: clamp(36px, 3.4vw, 49px); }
+.reading__code { margin-top: 24px; }
+.reading__code dd { font-size: clamp(20px, 1.65vw, 24px); overflow-wrap: anywhere; }
+.reading .reading__facts { margin-top: 32px; padding-top: 26px; border-top: 1px solid #daddd7; display: flex; flex-wrap: wrap; gap: 24px 32px; }
+.reading__date dd { font-size: clamp(29px, 2.4vw, 35px); font-variant-numeric: tabular-nums; }
+.reading__batch dd { font-size: clamp(25px, 2vw, 29px); font-variant-numeric: tabular-nums; }
+.reading .reading__details { display: flex; flex-wrap: wrap; gap: 24px 40px; margin-top: 30px; }
+.reading__details dd { font-size: 21px; }
+.reading__scope { margin: 56px 0 0; padding-inline: clamp(8px, 3.3vw, 48px); color: var(--type-secondary); font-size: 12px; line-height: 1.9; }
+.reading__scope span { display: block; }
+@media (min-width: 701px) and (max-width: 960px) {
+  .reading { margin-top: 10svh; padding-block: 8svh; }
+  .reading__intro { padding-inline: 32px; }
+  .reading h2 { font-size: 52px; }
+  .reading h2 span { display: block; }
+  .reading__lead { max-width: 30em; font-size: 16px; }
+  .reading__composition { grid-template-columns: minmax(0, 1fr); gap: 44px; margin-top: 48px; }
+  .reading__media { width: 88%; margin: 0; }
+  .reading__field { width: 88%; justify-self: end; padding-right: 16px; }
+  .reading__product dd { font-size: 54px; }
+  .reading__code dd { font-size: 26px; }
+  .reading .reading__facts { gap: 32px 72px; }
+  .reading__date dd { font-size: 42px; }
+  .reading__batch dd { font-size: 34px; }
+  .reading .reading__details { gap: 32px 72px; }
+}
+@media (max-width: 700px) {
+  .reading { margin-top: 8svh; padding-block: 7svh 9svh; }
+  .reading__intro { padding-inline: 8px; }
+  .reading__eyebrow { margin-bottom: 16px; font-size: 13px; }
+  .reading h2 { font-size: clamp(31px, 8.2vw, 36px); line-height: 1.38; }
+  .reading h2 span { display: block; }
+  .reading__lead { margin-top: 20px; max-width: 26em; font-size: 16px; line-height: 1.85; }
+  .reading__composition { display: block; margin-top: 36px; }
+  .reading__media { margin: 0; }
+  .reading__field { margin-top: 40px; padding-inline: 8px; }
+  .reading__example { margin-bottom: 26px; }
+  .reading__product dd { font-size: clamp(36px, 10.5vw, 44px); }
+  .reading__code dd { font-size: clamp(20px, 5.5vw, 24px); }
+  .reading .reading__facts { display: block; margin-top: 30px; }
+  .reading__date dd { font-size: 38px; }
+  .reading__batch { margin-top: 24px; }
+  .reading__batch dd { font-size: 31px; }
+  .reading .reading__details { gap: 24px 32px; }
+  .reading__details dd { font-size: 20px; }
+  .reading__scope { margin-top: 38px; padding-inline: 8px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reading[data-handoff] .reading__field { transform: translateY(calc((1 - var(--reading-progress)) * 12px)); color: color-mix(in srgb, var(--type-section) calc(var(--reading-progress) * 100%), var(--type-secondary)); }
+  .reading[data-handoff] .reading__media { transform: translateX(calc((1 - var(--reading-progress)) * 6px)); }
+}
+@media (max-width: 960px) and (prefers-reduced-motion: no-preference) {
+  .reading[data-handoff] .reading__media { transform: none; }
+  .reading[data-handoff] .reading__field { transform: translateY(calc((1 - var(--reading-progress)) * 8px)); }
+}

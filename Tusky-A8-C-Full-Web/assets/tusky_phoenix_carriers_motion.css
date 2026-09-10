@@ -1,0 +1,17 @@
+/* CARRIER FIELD REVEAL: the accepted scene and route copy remain unchanged. */
+.carriers__media { overflow: hidden; }
+@media (prefers-reduced-motion: no-preference) {
+  .carriers[data-carrier-stage] .carriers__media {
+    clip-path: inset(calc((1 - var(--carrier-progress)) * 6%) calc((1 - var(--carrier-progress)) * 16%) calc((1 - var(--carrier-progress)) * 4%) calc((1 - var(--carrier-progress)) * 4%));
+  }
+  .carriers[data-carrier-stage] .carriers__media img {
+    transform: scale(calc(1 + (1 - var(--carrier-progress)) * 0.035));
+    transform-origin: 32% 65%;
+  }
+  .carriers[data-carrier-stage] .carriers__route-group h3,
+  .carriers[data-carrier-stage] .carriers__route-group dt { transition: color 240ms ease; }
+  .carriers[data-carrier-stage]:not([data-carrier-stage="complete"]) .carriers__route-group dt { color: var(--type-secondary); }
+  .carriers[data-carrier-stage="process"] .carriers__route-group:nth-child(1) :is(h3, dt),
+  .carriers[data-carrier-stage="carrier"] .carriers__route-group:nth-child(2) :is(h3, dt),
+  .carriers[data-carrier-stage="reading"] .carriers__route-group:nth-child(3) :is(h3, dt) { color: var(--type-section); }
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "attention": "static",
+    "c3bottom": 3064,
+    "chapter": {
+      "height": 917.46875,
+      "marginTop": "108px",
+      "paddingBottom": "90px",
+      "paddingTop": "90px",
+      "top": 3172,
+      "width": 1345
+    },
+    "fields": [
+      "产品名",
+      "识别码",
+      "生产日期",
+      "批号"
+    ],
+    "font": "\"Tusky Reading\", \"Noto Sans SC\", sans-serif",
+    "forbidden": 0,
+    "images": [
+      {
+        "loaded": true,
+        "src": "assets/tusky_phoenix_hero_approved.png"
+      },
+      {
+        "loaded": true,
+        "src": "assets/tusky_phoenix_lifecycle_desktop.webp"
+      },
+      {
+        "loaded": true,
+        "src": "assets/tusky_phoenix_alternative_carriers.webp"
+      }
+    ],
+    "overflow": 0,
+    "scrollY": 3189,
+    "textOverflow": [],
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525"
+    ],
+    "viewport": [
+      1440,
+      900
+    ],
+    "weight": "350"
+  },
+  {
+    "attention": "static",
+    "c3bottom": 2730.203125,
+    "chapter": {
+      "height": 930.53125,
+      "marginTop": "67.52px",
+      "paddingBottom": "75.96px",
+      "paddingTop": "59.08px",
+      "top": 2797.71875,
+      "width": 319
+    },
+    "fields": [
+      "产品名",
+      "识别码",
+      "生产日期",
+      "批号"
+    ],
+    "font": "\"Tusky Reading\", \"Noto Sans SC\", sans-serif",
+    "forbidden": 0,
+    "images": [
+      {
+        "loaded": true,
+        "src": "assets/tusky_phoenix_hero_approved.png"
+      },
+      {
+        "loaded": true,
+        "src": "assets/tusky_phoenix_lifecycle_desktop.webp"
+      },
+      {
+        "loaded": true,
+        "src": "assets/tusky_phoenix_alternative_carriers.webp"
+      }
+    ],
+    "overflow": 0,
+    "scrollY": 2884,
+    "textOverflow": [],
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525"
+    ],
+    "viewport": [
+      390,
+      844
+    ],
+    "weight": "350"
+  }
+]

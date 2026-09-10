@@ -1,0 +1,30 @@
+{
+  "protectedFilesUnchanged": 18,
+  "chapters1to3SourceUnchanged": true,
+  "fullPackageBytes": 6393081,
+  "fullPackageEntries": 19,
+  "extractedOutsideProject": "C:\\Users\\Admin\\AppData\\Local\\Temp\\seal-tusky-a8b-20260910\\full-extracted",
+  "archiveCRC": "PASS",
+  "extractedHashes": "PASS",
+  "independentHTTPFilesMatched": 18,
+  "browserViewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "mobileLifecycleCurrentSrc": "assets/tusky_phoenix_lifecycle_mobile.webp",
+  "desktopLifecycleCurrentSrc": "assets/tusky_phoenix_lifecycle_desktop.webp",
+  "desktopReverseAttention": "identity",
+  "normalConsoleWarningsErrors": 0,
+  "desktopVideo": {
+    "codec": "vp8",
+    "durationSeconds": 7.1,
+    "bytes": 171043,
+    "observedPlaybackSeconds": 4.507125
+  }
+}

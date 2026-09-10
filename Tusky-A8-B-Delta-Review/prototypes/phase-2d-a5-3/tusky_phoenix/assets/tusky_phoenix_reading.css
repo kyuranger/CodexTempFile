@@ -1,0 +1,132 @@
+/* A8-B: one open reading field. Example values never change with attention. */
+@font-face {
+  font-family: "Tusky Reading";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/noto-sans-sc-reading.woff2") format("woff2");
+}
+
+.reading {
+  width: var(--story-width);
+  max-width: var(--story-max-width);
+  min-height: 100svh;
+  margin: 12svh auto 0;
+  padding: 10svh clamp(8px, 3.3vw, 48px) 10svh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Tusky Reading", "Noto Sans SC", sans-serif;
+  font-synthesis: none;
+  color: var(--type-section);
+}
+.reading__eyebrow {
+  margin: 0 0 18px;
+  color: var(--type-identity);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.reading h2 {
+  margin: 0;
+  font-size: clamp(44px, 4.45vw, 64px);
+  line-height: 1.25;
+  font-weight: 350;
+}
+.reading h2 span { display: inline-block; }
+.reading__lead {
+  margin: 22px 0 0;
+  max-width: 37em;
+  font-size: 17px;
+  line-height: 1.85;
+  font-weight: 400;
+  color: var(--type-lead);
+  text-wrap: pretty;
+}
+.reading__field { margin-top: clamp(52px, 7svh, 80px); }
+.reading__example {
+  margin: 0 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  color: var(--type-identity);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.reading__example span { color: var(--type-secondary); font-size: 12px; align-self: center; }
+.reading dl { margin: 0; }
+.reading dt {
+  font-size: 14px;
+  line-height: 1.65;
+  font-weight: 400;
+  color: var(--type-detail);
+}
+.reading dd { margin: 12px 0 0; font-weight: 350; line-height: 1.3; }
+.reading__identity { display: block; }
+.reading__product dd { font-size: clamp(52px, 5.3vw, 76px); }
+.reading__code { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline; margin-top: 26px; }
+.reading__code dd { margin: 0; font-size: clamp(23px, 2vw, 29px); overflow-wrap: anywhere; }
+.reading .reading__facts {
+  margin-top: 44px;
+  padding-top: 30px;
+  border-top: 1px solid #daddd7;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 32px clamp(64px, 10vw, 160px);
+}
+.reading__date dd { font-size: clamp(38px, 3.75vw, 54px); font-variant-numeric: tabular-nums; }
+.reading__batch dd { font-size: clamp(30px, 2.85vw, 41px); font-variant-numeric: tabular-nums; }
+.reading__scope {
+  margin: auto 0 0;
+  padding-top: 48px;
+  color: var(--type-secondary);
+  font-size: 13px;
+  line-height: 1.85;
+  max-width: 54em;
+}
+.reading__scope span { display: inline-block; }
+
+/* Tablet has a taller, deliberate reading order, not a scaled Desktop grid. */
+@media (min-width: 701px) and (max-width: 960px) {
+  .reading { margin-top: 10svh; padding: 8svh 32px; }
+  .reading h2 { font-size: 52px; }
+  .reading h2 span { display: block; }
+  .reading__lead { max-width: 30em; font-size: 16px; }
+  .reading__field { margin-top: 64px; }
+  .reading__product dd { font-size: 68px; }
+  .reading__code dd { font-size: 26px; }
+  .reading .reading__facts { margin-top: 52px; gap: 28px 64px; }
+  .reading__date dd { font-size: 44px; }
+  .reading__batch dd { font-size: 34px; }
+}
+@media (max-width: 700px) {
+  .reading { min-height: 100svh; margin-top: 8svh; padding: 7svh 8px 9svh; }
+  .reading__eyebrow { margin-bottom: 16px; font-size: 13px; }
+  .reading h2 { font-size: clamp(31px, 8.2vw, 36px); line-height: 1.38; }
+  .reading h2 span { display: block; }
+  .reading__lead { margin-top: 20px; max-width: 26em; font-size: 16px; line-height: 1.85; }
+  .reading__field { margin-top: 44px; }
+  .reading__example { margin-bottom: 26px; gap: 8px 18px; font-size: 13px; }
+  .reading__product dd { font-size: clamp(38px, 10.5vw, 46px); }
+  .reading__code { display: block; margin-top: 24px; }
+  .reading__code dd { margin-top: 8px; font-size: clamp(20px, 5.5vw, 24px); }
+  .reading .reading__facts { display: block; margin-top: 32px; padding-top: 28px; }
+  .reading__date dd { font-size: 38px; }
+  .reading__batch { margin-top: 26px; }
+  .reading__batch dd { font-size: 31px; }
+  .reading__scope { padding-top: 38px; font-size: 12px; line-height: 1.9; }
+  .reading__scope span { display: block; }
+}
+
+/* Full static content is the default; only reading prominence is enhanced. */
+@media (min-width: 701px) and (prefers-reduced-motion: no-preference) {
+  .reading[data-attention] .reading__identity,
+  .reading[data-attention] .reading__facts {
+    transition: color 360ms ease, transform 420ms ease;
+  }
+  .reading[data-attention="identity"] .reading__facts { color: var(--type-secondary); transform: translateY(6px); }
+  .reading[data-attention="facts"] .reading__identity { color: var(--type-secondary); }
+  .reading[data-attention="facts"] .reading__facts { color: var(--type-section); transform: none; }
+  .reading[data-attention="complete"] .reading__identity,
+  .reading[data-attention="complete"] .reading__facts { color: var(--type-section); transform: none; }
+}

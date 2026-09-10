@@ -1,0 +1,842 @@
+[
+  {
+    "c3Clip": "inset(6% 16% 4% 4% round 26px)",
+    "c3MediaBottom": 1205.34375,
+    "c3MediaTop": 584.640625,
+    "c3Progress": "0.0000",
+    "c3Radius": "26px",
+    "c3Stage": "process",
+    "c3Top": 445,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1453,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(0.94, 0, 0, 0.94, -28, 44)",
+    "imageTransform": "matrix(1.055, 0, 0, 1.055, -7.58516, 0)",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      1440,
+      900
+    ],
+    "y": 3159,
+    "label": "early"
+  },
+  {
+    "c3Clip": "inset(6% 16% 4% 4% round 26px)",
+    "c3MediaBottom": 940.34375,
+    "c3MediaTop": 319.640625,
+    "c3Progress": "0.0000",
+    "c3Radius": "26px",
+    "c3Stage": "process",
+    "c3Top": 180,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1188,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(0.94, 0, 0, 0.94, -28, 44)",
+    "imageTransform": "matrix(1.055, 0, 0, 1.055, -7.58516, 0)",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      1440,
+      900
+    ],
+    "y": 3424,
+    "label": "start"
+  },
+  {
+    "c3Clip": "inset(3% 8% 2% 2% round 26px)",
+    "c3MediaBottom": 814.34375,
+    "c3MediaTop": 193.640625,
+    "c3Progress": "0.5000",
+    "c3Radius": "26px",
+    "c3Stage": "carrier",
+    "c3Top": 54,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1062,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(0.94, 0, 0, 0.94, -28, 44)",
+    "imageTransform": "matrix(1.055, 0, 0, 1.055, -7.58516, 0)",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      1440,
+      900
+    ],
+    "y": 3550,
+    "label": "middle"
+  },
+  {
+    "c3Clip": "inset(0% round 26px)",
+    "c3MediaBottom": 688.34375,
+    "c3MediaTop": 67.640625,
+    "c3Progress": "1.0000",
+    "c3Radius": "26px",
+    "c3Stage": "complete",
+    "c3Top": -72,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 936,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(0.94, 0, 0, 0.94, -28, 44)",
+    "imageTransform": "matrix(1.055, 0, 0, 1.055, -7.58516, 0)",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      1440,
+      900
+    ],
+    "y": 3676,
+    "label": "end"
+  },
+  {
+    "c3Clip": "inset(6% 16% 4% 4% round 22px)",
+    "c3MediaBottom": 1013.078125,
+    "c3MediaTop": 584.921875,
+    "c3Progress": "0.0000",
+    "c3Radius": "22px",
+    "c3Stage": "process",
+    "c3Top": 349,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1357,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(0.94, 0, 0, 0.94, -28, 44)",
+    "imageTransform": "matrix(1.055, 0, 0, 1.055, -5.37359, 0)",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      1024,
+      900
+    ],
+    "y": 3255,
+    "label": "early"
+  },
+  {
+    "c3Clip": "inset(6% 16% 4% 4% round 22px)",
+    "c3MediaBottom": 753.078125,
+    "c3MediaTop": 324.921875,
+    "c3Progress": "0.0000",
+    "c3Radius": "22px",
+    "c3Stage": "process",
+    "c3Top": 89,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1097,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(0.94, 0, 0, 0.94, -28, 44)",
+    "imageTransform": "matrix(1.055, 0, 0, 1.055, -5.37359, 0)",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      1024,
+      900
+    ],
+    "y": 3515,
+    "label": "start"
+  },
+  {
+    "c3Clip": "inset(2.9982% 7.9952% 1.9988% 1.9988% round 22px)",
+    "c3MediaBottom": 626.078125,
+    "c3MediaTop": 197.921875,
+    "c3Progress": "0.5003",
+    "c3Radius": "22px",
+    "c3Stage": "carrier",
+    "c3Top": -38,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 970,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(0.94, 0, 0, 0.94, -28, 44)",
+    "imageTransform": "matrix(1.055, 0, 0, 1.055, -5.37359, 0)",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      1024,
+      900
+    ],
+    "y": 3642,
+    "label": "middle"
+  },
+  {
+    "c3Clip": "inset(0% round 22px)",
+    "c3MediaBottom": 500.078125,
+    "c3MediaTop": 71.921875,
+    "c3Progress": "1.0000",
+    "c3Radius": "22px",
+    "c3Stage": "complete",
+    "c3Top": -164,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 844,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(0.94, 0, 0, 0.94, -28, 44)",
+    "imageTransform": "matrix(1.055, 0, 0, 1.055, -5.37359, 0)",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      1024,
+      900
+    ],
+    "y": 3768,
+    "label": "end"
+  },
+  {
+    "c3Clip": "inset(6% 16% 4% 4%)",
+    "c3MediaBottom": 1306.0625,
+    "c3MediaTop": 766.75,
+    "c3Progress": "0.0000",
+    "c3Radius": "0px",
+    "c3Stage": "process",
+    "c3Top": 472.984375,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1896.125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      820,
+      1180
+    ],
+    "y": 2821,
+    "label": "early"
+  },
+  {
+    "c3Clip": "inset(5.9988% 15.9968% 3.9992% 3.9992%)",
+    "c3MediaBottom": 964.0625,
+    "c3MediaTop": 424.75,
+    "c3Progress": "0.0002",
+    "c3Radius": "0px",
+    "c3Stage": "process",
+    "c3Top": 130.984375,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1554.125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      820,
+      1180
+    ],
+    "y": 3163,
+    "label": "start"
+  },
+  {
+    "c3Clip": "inset(3.003% 8.008% 2.002% 2.002%)",
+    "c3MediaBottom": 799.0625,
+    "c3MediaTop": 259.75,
+    "c3Progress": "0.4995",
+    "c3Radius": "0px",
+    "c3Stage": "carrier",
+    "c3Top": -34.015625,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1389.125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      820,
+      1180
+    ],
+    "y": 3328,
+    "label": "middle"
+  },
+  {
+    "c3Clip": "inset(0%)",
+    "c3MediaBottom": 633.0625,
+    "c3MediaTop": 93.75,
+    "c3Progress": "1.0000",
+    "c3Radius": "0px",
+    "c3Stage": "complete",
+    "c3Top": -200.015625,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1223.125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      820,
+      1180
+    ],
+    "y": 3494,
+    "label": "end"
+  },
+  {
+    "c3Clip": "inset(6% 16% 4% 4%)",
+    "c3MediaBottom": 917.4375,
+    "c3MediaTop": 606.1875,
+    "c3Progress": "0.0000",
+    "c3Radius": "0px",
+    "c3Stage": "process",
+    "c3Top": 336.1875,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1486.140625,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      430,
+      932
+    ],
+    "y": 2632,
+    "label": "early"
+  },
+  {
+    "c3Clip": "inset(5.9922% 15.9792% 3.9948% 3.9948%)",
+    "c3MediaBottom": 646.4375,
+    "c3MediaTop": 335.1875,
+    "c3Progress": "0.0013",
+    "c3Radius": "0px",
+    "c3Stage": "process",
+    "c3Top": 65.1875,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1215.140625,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      430,
+      932
+    ],
+    "y": 2903,
+    "label": "start"
+  },
+  {
+    "c3Clip": "inset(3.0036% 8.0096% 2.0024% 2.0024%)",
+    "c3MediaBottom": 516.4375,
+    "c3MediaTop": 205.1875,
+    "c3Progress": "0.4994",
+    "c3Radius": "0px",
+    "c3Stage": "carrier",
+    "c3Top": -64.8125,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1085.140625,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      430,
+      932
+    ],
+    "y": 3033,
+    "label": "middle"
+  },
+  {
+    "c3Clip": "inset(0.0144% 0.0384% 0.0096% 0.0096%)",
+    "c3MediaBottom": 386.4375,
+    "c3MediaTop": 75.1875,
+    "c3Progress": "0.9976",
+    "c3Radius": "0px",
+    "c3Stage": "complete",
+    "c3Top": -194.8125,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 955.140625,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      430,
+      932
+    ],
+    "y": 3163,
+    "label": "end"
+  },
+  {
+    "c3Clip": "inset(6% 16% 4% 4%)",
+    "c3MediaBottom": 829.890625,
+    "c3MediaTop": 548.640625,
+    "c3Progress": "0.0000",
+    "c3Radius": "0px",
+    "c3Stage": "process",
+    "c3Top": 258.03125,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1386.28125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      390,
+      844
+    ],
+    "y": 2458,
+    "label": "early"
+  },
+  {
+    "c3Clip": "inset(5.9952% 15.9872% 3.9968% 3.9968%)",
+    "c3MediaBottom": 584.890625,
+    "c3MediaTop": 303.640625,
+    "c3Progress": "0.0008",
+    "c3Radius": "0px",
+    "c3Stage": "process",
+    "c3Top": 13.03125,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1141.28125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      390,
+      844
+    ],
+    "y": 2703,
+    "label": "start"
+  },
+  {
+    "c3Clip": "inset(2.9988% 7.9968% 1.9992% 1.9992%)",
+    "c3MediaBottom": 466.890625,
+    "c3MediaTop": 185.640625,
+    "c3Progress": "0.5002",
+    "c3Radius": "0px",
+    "c3Stage": "carrier",
+    "c3Top": -104.96875,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1023.28125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      390,
+      844
+    ],
+    "y": 2821,
+    "label": "middle"
+  },
+  {
+    "c3Clip": "inset(0.003% 0.008% 0.002% 0.002%)",
+    "c3MediaBottom": 348.890625,
+    "c3MediaTop": 67.640625,
+    "c3Progress": "0.9995",
+    "c3Radius": "0px",
+    "c3Stage": "complete",
+    "c3Top": -222.96875,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 905.28125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      390,
+      844
+    ],
+    "y": 2939,
+    "label": "end"
+  },
+  {
+    "c3Clip": "inset(6% 16% 4% 4%)",
+    "c3MediaBottom": 709.109375,
+    "c3MediaTop": 480.359375,
+    "c3Progress": "0.0000",
+    "c3Radius": "0px",
+    "c3Stage": "process",
+    "c3Top": 195.984375,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1273.125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      320,
+      740
+    ],
+    "y": 2202,
+    "label": "early"
+  },
+  {
+    "c3Clip": "inset(5.9988% 15.9968% 3.9992% 3.9992%)",
+    "c3MediaBottom": 495.109375,
+    "c3MediaTop": 266.359375,
+    "c3Progress": "0.0002",
+    "c3Radius": "0px",
+    "c3Stage": "process",
+    "c3Top": -18.015625,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1059.125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      320,
+      740
+    ],
+    "y": 2416,
+    "label": "start"
+  },
+  {
+    "c3Clip": "inset(3.0162% 8.0432% 2.0108% 2.0108%)",
+    "c3MediaBottom": 392.109375,
+    "c3MediaTop": 163.359375,
+    "c3Progress": "0.4973",
+    "c3Radius": "0px",
+    "c3Stage": "carrier",
+    "c3Top": -121.015625,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 956.125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      320,
+      740
+    ],
+    "y": 2519,
+    "label": "middle"
+  },
+  {
+    "c3Clip": "inset(0.0048% 0.0128% 0.0032% 0.0032%)",
+    "c3MediaBottom": 288.109375,
+    "c3MediaTop": 59.359375,
+    "c3Progress": "0.9992",
+    "c3Radius": "0px",
+    "c3Stage": "complete",
+    "c3Top": -225.015625,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 852.125,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      320,
+      740
+    ],
+    "y": 2623,
+    "label": "end"
+  },
+  {
+    "c3Clip": "inset(6% 16% 4% 4% round 22px)",
+    "c3MediaBottom": 993.6875,
+    "c3MediaTop": 454.375,
+    "c3Progress": "0.0000",
+    "c3Radius": "22px",
+    "c3Stage": "process",
+    "c3Top": 199,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1497.359375,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      820,
+      700
+    ],
+    "y": 1586,
+    "label": "early"
+  },
+  {
+    "c3Clip": "inset(6% 16% 4% 4% round 22px)",
+    "c3MediaBottom": 791.6875,
+    "c3MediaTop": 252.375,
+    "c3Progress": "0.0000",
+    "c3Radius": "22px",
+    "c3Stage": "process",
+    "c3Top": -3,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1295.359375,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      820,
+      700
+    ],
+    "y": 1788,
+    "label": "start"
+  },
+  {
+    "c3Clip": "inset(3.0114% 8.0304% 2.0076% 2.0076% round 22px)",
+    "c3MediaBottom": 693.6875,
+    "c3MediaTop": 154.375,
+    "c3Progress": "0.4981",
+    "c3Radius": "22px",
+    "c3Stage": "carrier",
+    "c3Top": -101,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1197.359375,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      820,
+      700
+    ],
+    "y": 1886,
+    "label": "middle"
+  },
+  {
+    "c3Clip": "inset(0% round 22px)",
+    "c3MediaBottom": 594.6875,
+    "c3MediaTop": 55.375,
+    "c3Progress": "1.0000",
+    "c3Radius": "22px",
+    "c3Stage": "complete",
+    "c3Top": -200,
+    "c4Progress": "0.0000",
+    "c4Stage": "physical",
+    "c4Top": 1098.359375,
+    "fieldColor": "color(srgb 0.411765 0.435294 0.407843)",
+    "fieldTransform": "matrix(1, 0, 0, 1, 0, 20)",
+    "imageTransform": "none",
+    "overflow": 0,
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      820,
+      700
+    ],
+    "y": 1985,
+    "label": "end"
+  }
+]

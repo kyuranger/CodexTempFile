@@ -1,0 +1,58 @@
+{
+  "baseline": "Tusky-A8-C-Full-Web.zip (A8-C rejected by PO; technical diff base only)",
+  "changed": [
+    {
+      "path": "assets/fonts/noto-sans-sc-reading.woff2",
+      "beforeSha256": "0b52d8fe3821af2ef5f4981159b7303a967fb1c2fadd1b1dca8c4be948309046",
+      "afterSha256": "cfe2226e5ab0db4f5eb29145e5b53ec6ecc4a387e614a87fe921272451166322",
+      "bytes": 21536
+    },
+    {
+      "path": "assets/tusky_phoenix_carriers_motion.css",
+      "beforeSha256": "e101229db0201608ffd28e51882a9f84d8cef4fc9e88289809207856ba71f38d",
+      "afterSha256": "d7b68156f84feeff95a4ac5b6c71e3335544370784c9fcecd84d13502755a437",
+      "bytes": 1386
+    },
+    {
+      "path": "assets/tusky_phoenix_reading.css",
+      "beforeSha256": "53634b04cd8a7f63b2af56226106635c4a98c8d6e29a351317e371cbe8fd6e44",
+      "afterSha256": "5ca5db2d670f69ceea8c72bd7b5b4f6e48093362e08402d16a7b1ae45d0a6bbf",
+      "bytes": 5698
+    },
+    {
+      "path": "assets/tusky_phoenix_reading.js",
+      "beforeSha256": "477cdd50d0a27f02d5fb913b6ca978ffa4079505a5f3f019d3fa08250ab58ce6",
+      "afterSha256": "bbfde5b53ebe790cd474e4f53df4417cc9233d1461797fb650a673ae4fa765f6",
+      "bytes": 3110
+    },
+    {
+      "path": "index.html",
+      "beforeSha256": "4038c5032bb6abca0559c49e63455c7b6856dd9b2ade0ff815a429e27f9b62a0",
+      "afterSha256": "286f8c0e7bbd680c05d6c9ad23bf7a7fcac53ced2e78bf540ab3b7c02edaa5ef",
+      "bytes": 22855
+    }
+  ],
+  "unchangedRuntimeFiles": [
+    "assets/fonts/noto-sans-sc-hero.woff2",
+    "assets/fonts/noto-sans-sc-lifecycle.woff2",
+    "assets/fonts/OFL.txt",
+    "assets/seal_ribbon_traceability_scene.png",
+    "assets/seal_ribbon_traceability_scene.webp",
+    "assets/tusky_phoenix_alternative_carriers.png",
+    "assets/tusky_phoenix_alternative_carriers.webp",
+    "assets/tusky_phoenix_hero_approved.png",
+    "assets/tusky_phoenix_lifecycle.css",
+    "assets/tusky_phoenix_lifecycle.js",
+    "assets/tusky_phoenix_lifecycle_desktop.png",
+    "assets/tusky_phoenix_lifecycle_desktop.webp",
+    "assets/tusky_phoenix_lifecycle_mobile.png",
+    "assets/tusky_phoenix_lifecycle_mobile.webp"
+  ],
+  "heroAndC2SourceIdentical": true,
+  "allExistingMediaIdentical": true,
+  "allRequiredViewportsReadable": true,
+  "allFinalStatesComplete": true,
+  "noJsAndReducedBranchReadable": true,
+  "allMotionFieldsInvariant": true,
+  "status": "INSPECTED_AND_TESTED"
+}

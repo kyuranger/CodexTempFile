@@ -1,0 +1,20 @@
+/* P01: a later reveal inside the page's established desktop media radius. */
+.carriers__media { --carrier-radius: 0px; overflow: hidden; border-radius: var(--carrier-radius); }
+@media (min-width: 961px), (min-width: 701px) and (orientation: landscape) {
+  .carriers__media { --carrier-radius: var(--story-radius); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .carriers[data-carrier-stage] .carriers__media {
+    clip-path: inset(calc((1 - var(--carrier-progress)) * 6%) calc((1 - var(--carrier-progress)) * 16%) calc((1 - var(--carrier-progress)) * 4%) calc((1 - var(--carrier-progress)) * 4%) round var(--carrier-radius));
+  }
+  .carriers[data-carrier-stage] .carriers__media img {
+    transform: scale(calc(1 + (1 - var(--carrier-progress)) * 0.035));
+    transform-origin: 32% 65%;
+  }
+  .carriers[data-carrier-stage] .carriers__route-group h3,
+  .carriers[data-carrier-stage] .carriers__route-group dt { transition: color 240ms ease; }
+  .carriers[data-carrier-stage]:not([data-carrier-stage="complete"]) .carriers__route-group dt { color: var(--type-secondary); }
+  .carriers[data-carrier-stage="process"] .carriers__route-group:nth-child(1) :is(h3, dt),
+  .carriers[data-carrier-stage="carrier"] .carriers__route-group:nth-child(2) :is(h3, dt),
+  .carriers[data-carrier-stage="reading"] .carriers__route-group:nth-child(3) :is(h3, dt) { color: var(--type-section); }
+}

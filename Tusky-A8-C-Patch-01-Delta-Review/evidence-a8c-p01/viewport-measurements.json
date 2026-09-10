@@ -1,0 +1,799 @@
+[
+  {
+    "c2stage": {
+      "height": 900,
+      "marginTop": "0px",
+      "paddingBottom": "0px",
+      "paddingTop": "0px",
+      "top": 2524,
+      "width": 1425
+    },
+    "c3": {
+      "height": 900,
+      "marginTop": "180px",
+      "paddingBottom": "90px",
+      "paddingTop": "90px",
+      "top": 3604,
+      "width": 1345
+    },
+    "c4": {
+      "height": 1157.296875,
+      "marginTop": "108px",
+      "paddingBottom": "90px",
+      "paddingTop": "90px",
+      "top": 4612,
+      "width": 1345
+    },
+    "fakeUI": 0,
+    "fields": [
+      "产品名称",
+      "识别码",
+      "生产日期",
+      "批号",
+      "型号",
+      "规格"
+    ],
+    "heading": "从标识读到产品信息",
+    "images": [
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_hero_approved.png"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_lifecycle_desktop.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_alternative_carriers.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/seal_ribbon_traceability_scene.webp"
+      }
+    ],
+    "mask": {
+      "background": "rgb(247, 247, 245)",
+      "display": "block"
+    },
+    "overflow": 0,
+    "progress": [
+      "1.0000",
+      "1.0000"
+    ],
+    "routes": [
+      "喷码",
+      "激光标识",
+      "TTO",
+      "标签",
+      "金属标牌",
+      "RFID"
+    ],
+    "scrollY": 4869,
+    "states": [
+      "complete",
+      "information"
+    ],
+    "textOverflow": [],
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      1440,
+      900
+    ],
+    "motion": {
+      "c3Clip": "inset(0% round 26px)",
+      "c3MediaBottom": -504.65625,
+      "c3MediaTop": -1125.359375,
+      "c3Progress": "1.0000",
+      "c3Radius": "26px",
+      "c3Stage": "complete",
+      "c3Top": -1265,
+      "c4Progress": "1.0000",
+      "c4Stage": "information",
+      "c4Top": -257,
+      "fieldColor": "color(srgb 0.145098 0.168627 0.145098)",
+      "fieldTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "imageTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "overflow": 0,
+      "values": [
+        "热转印碳带",
+        "DFWE2CDSDF2EC332C",
+        "2020-03-15",
+        "2020031525",
+        "SNE-207",
+        "55mm × 600m"
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "y": 4869
+    }
+  },
+  {
+    "c2stage": {
+      "height": 900,
+      "marginTop": "0px",
+      "paddingBottom": "0px",
+      "paddingTop": "0px",
+      "top": 2524,
+      "width": 1009
+    },
+    "c3": {
+      "height": 900,
+      "marginTop": "180px",
+      "paddingBottom": "90px",
+      "paddingTop": "90px",
+      "top": 3604,
+      "width": 929
+    },
+    "c4": {
+      "height": 968.390625,
+      "marginTop": "108px",
+      "paddingBottom": "90px",
+      "paddingTop": "90px",
+      "top": 4612,
+      "width": 953
+    },
+    "fakeUI": 0,
+    "fields": [
+      "产品名称",
+      "识别码",
+      "生产日期",
+      "批号",
+      "型号",
+      "规格"
+    ],
+    "heading": "从标识读到产品信息",
+    "images": [
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_hero_approved.png"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_lifecycle_desktop.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_alternative_carriers.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/seal_ribbon_traceability_scene.webp"
+      }
+    ],
+    "mask": {
+      "background": "rgb(247, 247, 245)",
+      "display": "block"
+    },
+    "overflow": 0,
+    "progress": [
+      "1.0000",
+      "0.9969"
+    ],
+    "routes": [
+      "喷码",
+      "激光标识",
+      "TTO",
+      "标签",
+      "金属标牌",
+      "RFID"
+    ],
+    "scrollY": 4680,
+    "states": [
+      "complete",
+      "information"
+    ],
+    "textOverflow": [],
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      1024,
+      900
+    ]
+  },
+  {
+    "c2stage": {
+      "height": 1121,
+      "marginTop": "0px",
+      "paddingBottom": "0px",
+      "paddingTop": "0px",
+      "top": 2007.796875,
+      "width": 805
+    },
+    "c3": {
+      "height": 1305.140625,
+      "marginTop": "165.2px",
+      "paddingBottom": "94.4px",
+      "paddingTop": "94.4px",
+      "top": 3293.984375,
+      "width": 765
+    },
+    "c4": {
+      "height": 1606.703125,
+      "marginTop": "118px",
+      "paddingBottom": "94.4px",
+      "paddingTop": "94.4px",
+      "top": 4717.125,
+      "width": 749
+    },
+    "fakeUI": 0,
+    "fields": [
+      "产品名称",
+      "识别码",
+      "生产日期",
+      "批号",
+      "型号",
+      "规格"
+    ],
+    "heading": "从标识读到产品信息",
+    "images": [
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_hero_approved.png"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_lifecycle_desktop.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_alternative_carriers.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/seal_ribbon_traceability_scene.webp"
+      }
+    ],
+    "mask": {
+      "background": "rgb(247, 247, 245)",
+      "display": "block"
+    },
+    "overflow": 0,
+    "progress": [
+      "1.0000",
+      "1.0000"
+    ],
+    "routes": [
+      "喷码",
+      "激光标识",
+      "TTO",
+      "标签",
+      "金属标牌",
+      "RFID"
+    ],
+    "scrollY": 5144,
+    "states": [
+      "complete",
+      "information"
+    ],
+    "textOverflow": [],
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      820,
+      1180
+    ],
+    "motion": {
+      "c3Clip": "inset(0%)",
+      "c3MediaBottom": -1016.9375,
+      "c3MediaTop": -1556.25,
+      "c3Progress": "1.0000",
+      "c3Radius": "0px",
+      "c3Stage": "complete",
+      "c3Top": -1850.015625,
+      "c4Progress": "1.0000",
+      "c4Stage": "information",
+      "c4Top": -426.875,
+      "fieldColor": "color(srgb 0.145098 0.168627 0.145098)",
+      "fieldTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "imageTransform": "none",
+      "overflow": 0,
+      "values": [
+        "热转印碳带",
+        "DFWE2CDSDF2EC332C",
+        "2020-03-15",
+        "2020031525",
+        "SNE-207",
+        "55mm × 600m"
+      ],
+      "viewport": [
+        820,
+        1180
+      ],
+      "y": 5144
+    }
+  },
+  {
+    "c2stage": {
+      "height": 894.71875,
+      "marginTop": "0px",
+      "paddingBottom": "0px",
+      "paddingTop": "0px",
+      "top": 1980.28125,
+      "width": 415
+    },
+    "c3": {
+      "height": 1075.40625,
+      "marginTop": "93.2px",
+      "paddingBottom": "55.92px",
+      "paddingTop": "55.92px",
+      "top": 2968.1875,
+      "width": 383
+    },
+    "c4": {
+      "height": 1368.546875,
+      "marginTop": "74.56px",
+      "paddingBottom": "83.88px",
+      "paddingTop": "65.24px",
+      "top": 4118.140625,
+      "width": 359
+    },
+    "fakeUI": 0,
+    "fields": [
+      "产品名称",
+      "识别码",
+      "生产日期",
+      "批号",
+      "型号",
+      "规格"
+    ],
+    "heading": "从标识读到产品信息",
+    "images": [
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_hero_approved.png"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_lifecycle_mobile.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_alternative_carriers.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/seal_ribbon_traceability_scene.webp"
+      }
+    ],
+    "mask": {
+      "background": "rgb(247, 247, 245)",
+      "display": "block"
+    },
+    "overflow": 0,
+    "progress": [
+      "1.0000",
+      "1.0000"
+    ],
+    "routes": [
+      "喷码",
+      "激光标识",
+      "TTO",
+      "标签",
+      "金属标牌",
+      "RFID"
+    ],
+    "scrollY": 4555,
+    "states": [
+      "complete",
+      "information"
+    ],
+    "textOverflow": [],
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      430,
+      932
+    ],
+    "motion": {
+      "c3Clip": "inset(0%)",
+      "c3MediaBottom": -1005.5625,
+      "c3MediaTop": -1316.8125,
+      "c3Progress": "1.0000",
+      "c3Radius": "0px",
+      "c3Stage": "complete",
+      "c3Top": -1586.8125,
+      "c4Progress": "1.0000",
+      "c4Stage": "information",
+      "c4Top": -436.859375,
+      "fieldColor": "color(srgb 0.145098 0.168627 0.145098)",
+      "fieldTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "imageTransform": "none",
+      "overflow": 0,
+      "values": [
+        "热转印碳带",
+        "DFWE2CDSDF2EC332C",
+        "2020-03-15",
+        "2020031525",
+        "SNE-207",
+        "55mm × 600m"
+      ],
+      "viewport": [
+        430,
+        932
+      ],
+      "y": 4555
+    }
+  },
+  {
+    "c2stage": {
+      "height": 810.234375,
+      "marginTop": "0px",
+      "paddingBottom": "0px",
+      "paddingTop": "0px",
+      "top": 1821.40625,
+      "width": 375
+    },
+    "c3": {
+      "height": 1060.734375,
+      "marginTop": "84.4px",
+      "paddingBottom": "50.64px",
+      "paddingTop": "50.64px",
+      "top": 2716.03125,
+      "width": 343
+    },
+    "c4": {
+      "height": 1331.375,
+      "marginTop": "67.52px",
+      "paddingBottom": "75.96px",
+      "paddingTop": "59.08px",
+      "top": 3844.28125,
+      "width": 319
+    },
+    "fakeUI": 0,
+    "fields": [
+      "产品名称",
+      "识别码",
+      "生产日期",
+      "批号",
+      "型号",
+      "规格"
+    ],
+    "heading": "从标识读到产品信息",
+    "images": [
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_hero_approved.png"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_lifecycle_mobile.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_alternative_carriers.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/seal_ribbon_traceability_scene.webp"
+      }
+    ],
+    "mask": {
+      "background": "rgb(247, 247, 245)",
+      "display": "block"
+    },
+    "overflow": 0,
+    "progress": [
+      "1.0000",
+      "1.0000"
+    ],
+    "routes": [
+      "喷码",
+      "激光标识",
+      "TTO",
+      "标签",
+      "金属标牌",
+      "RFID"
+    ],
+    "scrollY": 4332,
+    "states": [
+      "complete",
+      "information"
+    ],
+    "textOverflow": [],
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      390,
+      844
+    ],
+    "motion": {
+      "c3Clip": "inset(0%)",
+      "c3MediaBottom": -1044.109375,
+      "c3MediaTop": -1325.359375,
+      "c3Progress": "1.0000",
+      "c3Radius": "0px",
+      "c3Stage": "complete",
+      "c3Top": -1615.96875,
+      "c4Progress": "1.0000",
+      "c4Stage": "information",
+      "c4Top": -487.71875,
+      "fieldColor": "color(srgb 0.145098 0.168627 0.145098)",
+      "fieldTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "imageTransform": "none",
+      "overflow": 0,
+      "values": [
+        "热转印碳带",
+        "DFWE2CDSDF2EC332C",
+        "2020-03-15",
+        "2020031525",
+        "SNE-207",
+        "55mm × 600m"
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "y": 4332
+    }
+  },
+  {
+    "c2stage": {
+      "height": 710.390625,
+      "marginTop": "0px",
+      "paddingBottom": "0px",
+      "paddingTop": "0px",
+      "top": 1613.59375,
+      "width": 305
+    },
+    "c3": {
+      "height": 1017.953125,
+      "marginTop": "74px",
+      "paddingBottom": "44.4px",
+      "paddingTop": "44.4px",
+      "top": 2397.984375,
+      "width": 281
+    },
+    "c4": {
+      "height": 1332.640625,
+      "marginTop": "59.2px",
+      "paddingBottom": "66.6px",
+      "paddingTop": "51.8px",
+      "top": 3475.125,
+      "width": 249
+    },
+    "fakeUI": 0,
+    "fields": [
+      "产品名称",
+      "识别码",
+      "生产日期",
+      "批号",
+      "型号",
+      "规格"
+    ],
+    "heading": "从标识读到产品信息",
+    "images": [
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_hero_approved.png"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_lifecycle_mobile.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_alternative_carriers.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/seal_ribbon_traceability_scene.webp"
+      }
+    ],
+    "mask": {
+      "background": "rgb(247, 247, 245)",
+      "display": "block"
+    },
+    "overflow": 0,
+    "progress": [
+      "1.0000",
+      "1.0000"
+    ],
+    "routes": [
+      "喷码",
+      "激光标识",
+      "TTO",
+      "标签",
+      "金属标牌",
+      "RFID"
+    ],
+    "scrollY": 4068,
+    "states": [
+      "complete",
+      "information"
+    ],
+    "textOverflow": [],
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      320,
+      740
+    ],
+    "motion": {
+      "c3Clip": "inset(0%)",
+      "c3MediaBottom": -1156.890625,
+      "c3MediaTop": -1385.640625,
+      "c3Progress": "1.0000",
+      "c3Radius": "0px",
+      "c3Stage": "complete",
+      "c3Top": -1670.015625,
+      "c4Progress": "1.0000",
+      "c4Stage": "information",
+      "c4Top": -592.875,
+      "fieldColor": "color(srgb 0.145098 0.168627 0.145098)",
+      "fieldTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "imageTransform": "none",
+      "overflow": 0,
+      "values": [
+        "热转印碳带",
+        "DFWE2CDSDF2EC332C",
+        "2020-03-15",
+        "2020031525",
+        "SNE-207",
+        "55mm × 600m"
+      ],
+      "viewport": [
+        320,
+        740
+      ],
+      "y": 4068
+    }
+  },
+  {
+    "c2stage": {
+      "height": 700,
+      "marginTop": "0px",
+      "paddingBottom": "0px",
+      "paddingTop": "0px",
+      "top": 987,
+      "width": 805
+    },
+    "c3": {
+      "height": 1228.359375,
+      "marginTop": "98px",
+      "paddingBottom": "56px",
+      "paddingTop": "56px",
+      "top": 1785,
+      "width": 765
+    },
+    "c4": {
+      "height": 1529.921875,
+      "marginTop": "70px",
+      "paddingBottom": "56px",
+      "paddingTop": "56px",
+      "top": 3083.359375,
+      "width": 749
+    },
+    "fakeUI": 0,
+    "fields": [
+      "产品名称",
+      "识别码",
+      "生产日期",
+      "批号",
+      "型号",
+      "规格"
+    ],
+    "heading": "从标识读到产品信息",
+    "images": [
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_hero_approved.png"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_lifecycle_desktop.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/tusky_phoenix_alternative_carriers.webp"
+      },
+      {
+        "loaded": true,
+        "src": "http://127.0.0.1:8767/assets/seal_ribbon_traceability_scene.webp"
+      }
+    ],
+    "mask": {
+      "background": "rgb(247, 247, 245)",
+      "display": "block"
+    },
+    "overflow": 0,
+    "progress": [
+      "1.0000",
+      "1.0000"
+    ],
+    "routes": [
+      "喷码",
+      "激光标识",
+      "TTO",
+      "标签",
+      "金属标牌",
+      "RFID"
+    ],
+    "scrollY": 3913,
+    "states": [
+      "complete",
+      "information"
+    ],
+    "textOverflow": [],
+    "values": [
+      "热转印碳带",
+      "DFWE2CDSDF2EC332C",
+      "2020-03-15",
+      "2020031525",
+      "SNE-207",
+      "55mm × 600m"
+    ],
+    "viewport": [
+      820,
+      700
+    ],
+    "motion": {
+      "c3Clip": "inset(0% round 22px)",
+      "c3MediaBottom": -1333.3125,
+      "c3MediaTop": -1872.625,
+      "c3Progress": "1.0000",
+      "c3Radius": "22px",
+      "c3Stage": "complete",
+      "c3Top": -2128,
+      "c4Progress": "1.0000",
+      "c4Stage": "information",
+      "c4Top": -829.640625,
+      "fieldColor": "color(srgb 0.145098 0.168627 0.145098)",
+      "fieldTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "imageTransform": "none",
+      "overflow": 0,
+      "values": [
+        "热转印碳带",
+        "DFWE2CDSDF2EC332C",
+        "2020-03-15",
+        "2020031525",
+        "SNE-207",
+        "55mm × 600m"
+      ],
+      "viewport": [
+        820,
+        700
+      ],
+      "y": 3913
+    }
+  }
+]

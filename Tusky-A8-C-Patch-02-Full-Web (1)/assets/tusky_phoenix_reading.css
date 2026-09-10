@@ -1,0 +1,113 @@
+/* A8-C P02: the scan stage opens into the page's own reading field.
+   Static content is complete. Only the decorative scan cue is hidden by default. */
+@font-face {
+  font-family: "Tusky Reading";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/noto-sans-sc-reading.woff2") format("woff2");
+}
+.reading {
+  width: var(--story-width);
+  max-width: var(--story-max-width);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: clamp(40px, 5svh, 60px) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Tusky Reading", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-synthesis: none;
+  color: var(--type-section);
+}
+.reading__intro { padding-inline: clamp(8px, 3.3vw, 48px); }
+.reading__eyebrow { margin: 0 0 12px; color: var(--type-identity); font-size: 14px; line-height: 1.5; font-weight: 400; }
+.reading h2 { margin: 0; font-size: clamp(40px, 4vw, 58px); line-height: 1.3; font-weight: 350; text-wrap: balance; }
+.reading__lead { margin: 16px 0 0; max-width: 44em; font-size: 16px; line-height: 1.8; font-weight: 400; color: var(--type-lead); text-wrap: pretty; }
+.reading__composition { position: relative; margin-top: 28px; display: grid; grid-template-columns: minmax(0, 1fr); }
+.reading__media { grid-area: 1 / 1; min-width: 0; margin: 0; }
+.reading__scene { position: relative; width: 100%; height: clamp(440px, 61svh, 610px); overflow: hidden; }
+.reading__scene img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 56%; }
+.reading__target { display: none; position: absolute; width: 9%; aspect-ratio: 1; left: 58.3%; top: 52%; color: #fff; filter: drop-shadow(0 1px 2px #252b2580); }
+.reading__target svg { display: block; width: 100%; height: 100%; }
+.reading__transition { grid-area: 1 / 1; align-self: start; justify-self: start; z-index: 1; margin: 20px 0 0 24px; padding: 9px 13px; background: #ffffffed; display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 12px; line-height: 1.6; color: #414740; }
+.reading__transition span + span::before { content: "→"; margin-inline-end: 14px; color: #737970; }
+.reading__field {
+  grid-area: 1 / 1;
+  align-self: end;
+  justify-self: end;
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  width: 52%;
+  padding: clamp(26px, 3vw, 44px);
+  background: #fff;
+}
+.reading__field-heading { margin: 0 0 22px; font-size: 13px; line-height: 1.6; font-weight: 400; color: var(--type-identity); }
+.reading dl { margin: 0; }
+.reading dt { font-size: 12px; line-height: 1.65; font-weight: 400; color: var(--type-detail); overflow-wrap: anywhere; }
+.reading dd { margin: 6px 0 0; font-weight: 400; line-height: 1.4; overflow-wrap: anywhere; }
+.reading__product dd { font-family: "Tusky Reading", Arial, sans-serif; font-size: clamp(30px, 3.3vw, 48px); font-weight: 350; line-height: 1.25; }
+.reading .reading__facts { margin-top: 25px; padding-top: 20px; border-top: 1px solid #daddd7; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 26px; }
+.reading__facts dd { font-size: clamp(17px, 1.5vw, 21px); font-variant-numeric: tabular-nums; }
+.reading__scope { margin: 17px 0 0; padding-inline: clamp(8px, 3.3vw, 48px); color: var(--type-secondary); font-size: 12px; line-height: 1.8; }
+@media (min-width: 961px) {
+  /* No JS and reduced motion: complete photograph, then the open facts. */
+  .reading:not([data-reading-stage]) .reading__scene { height: 320px; }
+  .reading:not([data-reading-stage]) .reading__scene img { object-fit: contain; object-position: center; }
+  .reading:not([data-reading-stage]) .reading__transition { grid-area: auto; margin: 18px 48px 0; padding: 0; }
+  .reading:not([data-reading-stage]) .reading__field { grid-area: auto; width: 100%; padding: 22px 48px 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 36px; }
+  .reading:not([data-reading-stage]) .reading__field-heading { grid-column: 1 / -1; margin-bottom: 16px; }
+  .reading:not([data-reading-stage]) .reading__facts { margin: 0; padding: 0; border: 0; }
+}
+@media (min-width: 961px) and (prefers-reduced-motion: no-preference) {
+  .reading[data-reading-stage] { height: 100svh; min-height: 800px; }
+  .reading[data-reading-stage] .reading__composition { flex: 1; min-height: 390px; }
+  .reading[data-reading-stage] .reading__media { min-height: 0; }
+  .reading[data-reading-stage] .reading__scene { height: 100%; }
+  .reading[data-reading-stage] .reading__field {
+    /* Origin near the phone; CSS clipping preserves the accessibility tree. */
+    clip-path: inset(calc((1 - var(--reading-open)) * 38%) calc((1 - var(--reading-open)) * 78%) calc((1 - var(--reading-open)) * 58%) calc((1 - var(--reading-open)) * 18%));
+    transform: translateY(calc((1 - var(--reading-open)) * -18px));
+    opacity: min(1, calc(var(--reading-open) * 4));
+  }
+  .reading[data-reading-stage] .reading__field > * { opacity: var(--reading-ink); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reading[data-reading-stage] .reading__target { display: block; opacity: var(--reading-target); transform: translate(-50%, -50%) scale(calc(1.06 - var(--reading-progress) * .06)); }
+}
+@media (max-width: 960px) {
+  .reading { min-height: 0; padding-block: 64px; }
+  .reading__intro { padding-inline: 20px; }
+  .reading h2 { max-width: 12em; font-size: 46px; }
+  .reading__composition { display: flex; flex-direction: column; margin-top: 28px; }
+  .reading__scene { height: auto; overflow: visible; }
+  .reading__scene img { height: auto; object-fit: contain; }
+  .reading__target { width: 10%; top: 52.4%; }
+  .reading__transition { margin: 20px 20px 0; padding: 0; background: none; gap: 8px 12px; }
+  .reading__transition span + span::before { margin-inline-end: 12px; }
+  .reading__field { width: 100%; padding: 28px 20px 0; }
+  .reading__field-heading { margin-bottom: 18px; }
+  .reading__product dd { font-size: 44px; }
+  .reading .reading__facts { margin-top: 24px; gap: 24px 32px; }
+  .reading__facts dd { font-size: 22px; }
+  .reading__scope { margin-top: 30px; padding-inline: 20px; }
+}
+@media (max-width: 700px) {
+  .reading { padding-block: 48px; }
+  .reading__intro { padding-inline: 8px; }
+  .reading__eyebrow { font-size: 13px; }
+  .reading h2 { max-width: 8em; font-size: clamp(30px, 8.2vw, 36px); line-height: 1.38; }
+  .reading h2 span { display: block; }
+  .reading__lead { margin-top: 16px; font-size: 15px; }
+  .reading__transition { margin-inline: 8px; font-size: 11px; gap: 6px 8px; }
+  .reading__transition span + span::before { margin-inline-end: 8px; }
+  .reading__field { padding: 26px 8px 0; }
+  .reading__product dd { font-size: clamp(29px, 8.8vw, 38px); }
+  .reading .reading__facts { gap: 20px 16px; }
+  .reading__facts dd { font-size: clamp(16px, 4.6vw, 19px); }
+  .reading__scope { padding-inline: 8px; margin-top: 26px; }
+}
+@media (max-width: 960px) and (prefers-reduced-motion: no-preference) {
+  .reading[data-reading-stage] .reading__field { transform: translateY(calc((1 - var(--reading-open)) * 10px)); }
+}
